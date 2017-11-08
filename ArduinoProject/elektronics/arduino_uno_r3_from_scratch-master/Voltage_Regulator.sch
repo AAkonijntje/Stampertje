@@ -1,33 +1,5 @@
 EESchema Schematic File Version 2
-LIBS:power
-LIBS:device
-LIBS:transistors
-LIBS:conn
-LIBS:linear
-LIBS:regul
-LIBS:74xx
-LIBS:cmos4000
-LIBS:adc-dac
-LIBS:memory
-LIBS:xilinx
-LIBS:microcontrollers
-LIBS:dsp
-LIBS:microchip
-LIBS:analog_switches
-LIBS:motorola
-LIBS:texas
-LIBS:intel
-LIBS:audio
-LIBS:interface
-LIBS:digital-audio
-LIBS:philips
-LIBS:display
-LIBS:cypress
-LIBS:siliconi
-LIBS:opto
-LIBS:atmel
-LIBS:contrib
-LIBS:valves
+LIBS:Arduino_Uno_R3_From_Scratch-rescue
 LIBS:Arduino_Uno_R3_From_Scratch
 LIBS:MFN_Atmel
 LIBS:MFN_STMicro
@@ -36,7 +8,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 2 8
+Sheet 2 5
 Title "Arduino UNO R3 Clone"
 Date "8 oct 2015"
 Rev "0"
@@ -107,7 +79,7 @@ F 12 "~" H 7025 4175 60  0001 C CNN "Notes"
 	1    0    0    -1  
 $EndComp
 $Comp
-L BARREL_JACK CON1
+L BARREL_JACK-RESCUE-Arduino_Uno_R3_From_Scratch CON1
 U 1 1 55CD027B
 P 3725 3775
 F 0 "CON1" H 3725 4025 60  0000 C CNN
@@ -283,7 +255,7 @@ Wire Wire Line
 Wire Wire Line
 	7800 4525 7800 4325
 $Comp
-L LD1117S50TR U1
+L LD1117S50TR-RESCUE-Arduino_Uno_R3_From_Scratch U1
 U 1 1 55CD2289
 P 5925 3825
 F 0 "U1" H 6125 3575 60  0000 C CNN

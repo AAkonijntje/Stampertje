@@ -358,7 +358,8 @@ F 7 "EVQ-Q2U02W" H 3400 1975 60  0001 C CNN "MFP"
 F 8 "SMD" H 3400 1975 60  0001 C CNN "Package ID"
 F 9 "ANY" H 3400 1975 60  0001 C CNN "Source"
 F 10 "N" H 3400 1975 60  0001 C CNN "Critical"
-F 11 "Prefer below 3mm in accuator height off PCB" H 3400 1975 60  0001 C CNN "Notes"
+F 11 "328P_Sub" H 3400 1975 60  0001 C CNN "Subsystem"
+F 12 "Prefer below 3mm in accuator height off PCB" H 3400 1975 60  0001 C CNN "Notes"
 	1    3400 1975
 	0    -1   -1   0   
 $EndComp
