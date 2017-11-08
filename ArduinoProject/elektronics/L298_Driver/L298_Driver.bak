@@ -1,0 +1,233 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:switches
+LIBS:relays
+LIBS:motors
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:l298
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L D_Schottky D8
+U 1 1 5A030C9E
+P 4750 4650
+F 0 "D8" H 4750 4750 50  0000 C CNN
+F 1 "D_Schottky" H 4750 4550 50  0000 C CNN
+F 2 "" H 4750 4650 50  0001 C CNN
+F 3 "" H 4750 4650 50  0001 C CNN
+	1    4750 4650
+	0    1    1    0   
+$EndComp
+$Comp
+L D_Schottky D6
+U 1 1 5A030EE6
+P 5250 4650
+F 0 "D6" H 5250 4750 50  0000 C CNN
+F 1 "D_Schottky" H 5250 4550 50  0000 C CNN
+F 2 "" H 5250 4650 50  0001 C CNN
+F 3 "" H 5250 4650 50  0001 C CNN
+	1    5250 4650
+	0    1    1    0   
+$EndComp
+$Comp
+L D_Schottky D4
+U 1 1 5A030F1E
+P 5700 4650
+F 0 "D4" H 5700 4750 50  0000 C CNN
+F 1 "D_Schottky" H 5700 4550 50  0000 C CNN
+F 2 "" H 5700 4650 50  0001 C CNN
+F 3 "" H 5700 4650 50  0001 C CNN
+	1    5700 4650
+	0    1    1    0   
+$EndComp
+$Comp
+L D_Schottky D2
+U 1 1 5A030F62
+P 6100 4650
+F 0 "D2" H 6100 4750 50  0000 C CNN
+F 1 "D_Schottky" H 6100 4550 50  0000 C CNN
+F 2 "" H 6100 4650 50  0001 C CNN
+F 3 "" H 6100 4650 50  0001 C CNN
+	1    6100 4650
+	0    1    1    0   
+$EndComp
+$Comp
+L D_Schottky D7
+U 1 1 5A0311E0
+P 4750 3550
+F 0 "D7" H 4750 3650 50  0000 C CNN
+F 1 "D_Schottky" H 4750 3450 50  0000 C CNN
+F 2 "" H 4750 3550 50  0001 C CNN
+F 3 "" H 4750 3550 50  0001 C CNN
+	1    4750 3550
+	0    1    1    0   
+$EndComp
+$Comp
+L D_Schottky D5
+U 1 1 5A0311E6
+P 5250 3550
+F 0 "D5" H 5250 3650 50  0000 C CNN
+F 1 "D_Schottky" H 5250 3450 50  0000 C CNN
+F 2 "" H 5250 3550 50  0001 C CNN
+F 3 "" H 5250 3550 50  0001 C CNN
+	1    5250 3550
+	0    1    1    0   
+$EndComp
+$Comp
+L D_Schottky D3
+U 1 1 5A0311EC
+P 5700 3550
+F 0 "D3" H 5700 3650 50  0000 C CNN
+F 1 "D_Schottky" H 5700 3450 50  0000 C CNN
+F 2 "" H 5700 3550 50  0001 C CNN
+F 3 "" H 5700 3550 50  0001 C CNN
+	1    5700 3550
+	0    1    1    0   
+$EndComp
+$Comp
+L D_Schottky D1
+U 1 1 5A0311F2
+P 6100 3550
+F 0 "D1" H 6100 3650 50  0000 C CNN
+F 1 "D_Schottky" H 6100 3450 50  0000 C CNN
+F 2 "" H 6100 3550 50  0001 C CNN
+F 3 "" H 6100 3550 50  0001 C CNN
+	1    6100 3550
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4200 3950 6650 3950
+Wire Wire Line
+	4200 4050 6650 4050
+Wire Wire Line
+	4200 4150 6650 4150
+Wire Wire Line
+	4200 4250 6650 4250
+Wire Wire Line
+	4750 3700 4750 4500
+Connection ~ 4750 3950
+Wire Wire Line
+	5250 3700 5250 4500
+Connection ~ 5250 4050
+Wire Wire Line
+	5700 3700 5700 4500
+Connection ~ 5700 4150
+Wire Wire Line
+	6100 3700 6100 4500
+Connection ~ 6100 4250
+Wire Wire Line
+	4750 3400 4750 3200
+Wire Wire Line
+	4750 3200 6650 3200
+Wire Wire Line
+	5250 3400 5250 3200
+Connection ~ 5250 3200
+Wire Wire Line
+	5700 3400 5700 3200
+Connection ~ 5700 3200
+Wire Wire Line
+	6100 3400 6100 3200
+Connection ~ 6100 3200
+$Comp
+L GND #PWR?
+U 1 1 5A0319F2
+P 4750 4900
+F 0 "#PWR?" H 4750 4650 50  0001 C CNN
+F 1 "GND" H 4750 4750 50  0000 C CNN
+F 2 "" H 4750 4900 50  0001 C CNN
+F 3 "" H 4750 4900 50  0001 C CNN
+	1    4750 4900
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5A031AAF
+P 5250 4900
+F 0 "#PWR?" H 5250 4650 50  0001 C CNN
+F 1 "GND" H 5250 4750 50  0000 C CNN
+F 2 "" H 5250 4900 50  0001 C CNN
+F 3 "" H 5250 4900 50  0001 C CNN
+	1    5250 4900
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5A031AD9
+P 5700 4900
+F 0 "#PWR?" H 5700 4650 50  0001 C CNN
+F 1 "GND" H 5700 4750 50  0000 C CNN
+F 2 "" H 5700 4900 50  0001 C CNN
+F 3 "" H 5700 4900 50  0001 C CNN
+	1    5700 4900
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5A031B30
+P 6100 4900
+F 0 "#PWR?" H 6100 4650 50  0001 C CNN
+F 1 "GND" H 6100 4750 50  0000 C CNN
+F 2 "" H 6100 4900 50  0001 C CNN
+F 3 "" H 6100 4900 50  0001 C CNN
+	1    6100 4900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6100 4900 6100 4800
+Wire Wire Line
+	5700 4900 5700 4800
+Wire Wire Line
+	5250 4900 5250 4800
+Wire Wire Line
+	4750 4900 4750 4800
+$Comp
+L Conn_01x04_Male J?
+U 1 1 5A031222
+P 4000 4050
+F 0 "J?" H 4000 4250 50  0000 C CNN
+F 1 "Conn_01x04_Male" H 4000 3750 50  0000 C CNN
+F 2 "" H 4000 4050 50  0001 C CNN
+F 3 "" H 4000 4050 50  0001 C CNN
+	1    4000 4050
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
