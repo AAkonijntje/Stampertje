@@ -47,7 +47,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-<<<<<<< HEAD
 L D_Schottky D8
 U 1 1 5A030C9E
 P 4750 4650
@@ -229,16 +228,14 @@ F 1 "Conn_01x04_Male" H 4000 3750 50  0000 C CNN
 F 2 "" H 4000 4050 50  0001 C CNN
 F 3 "" H 4000 4050 50  0001 C CNN
 	1    4000 4050
-=======
-L L298D U?
-U 1 1 5A03F7D6
-P 5800 3000
-F 0 "U?" H 5800 3000 60  0000 C CNN
-F 1 "L298D" H 5800 3100 60  0000 C CNN
-F 2 "Multiwatt15-V" H 6000 3600 60  0000 C CNN
-F 3 "" H 5800 3000 60  0001 C CNN
-	1    5800 3000
->>>>>>> 8cbfbac76cc991fceef24fcdda0db35a4ef0e357
 	1    0    0    -1  
 $EndComp
+Text HLabel 6650 4250 2    60   Input ~ 0
+OUT4
+Text HLabel 6650 3950 2    60   Input ~ 0
+OUT1
+Text HLabel 6650 4050 2    60   Input ~ 0
+OUT2
+Text HLabel 6650 4150 2    60   Input ~ 0
+OUT3
 $EndSCHEMATC
