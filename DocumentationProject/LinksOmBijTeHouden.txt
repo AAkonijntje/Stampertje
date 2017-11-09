@@ -1,7 +1,0 @@
-Zwartwitsensor op ali: 1€ voor tien stuks
-https://nl.aliexpress.com/item/20-pcs-TCRT5000L-TCRT5000-Reflective-Optical-Sensor-Infrared-IR-Photoelectric-Switch/1909098476.html?spm=a2g0z.search0302.3.221.0ixNym&ws_ab_test=searchweb0_0,searchweb201602_0_10536_10537_10539_10055_10177_10056_10059_10534_10533_10060_100031_10107_10304_10307_10341_10065_10142_10340_10068_10343_10541_10342_10345_10103_10102_10344_10302_10073_10152_10151_10557_10154_10550_10552_10155_10551_10312_10554_10553_10314_10313_10084_10083_10561_10563_10562_10565_10564_10566-10552,searchweb201603_0,ppcSwitch_0&algo_pvid=fdd68193-eeb6-40c4-ae7b-e64c31ecf0d6&algo_expid=fdd68193-eeb6-40c4-ae7b-e64c31ecf0d6-29
-
-
-Optische encoder:
-
-http://be.farnell.com/broadcom-limited/aedr-8300-1q2/encoder-2channel-smd-180lpi/dp/1161103
