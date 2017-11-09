@@ -4,15 +4,15 @@
 #include "arduino.h"
 class Motor{
   public:
-    setSpeed(int speed);
-    setDirection(int direction);
-    setPinSpeed(int pin);
-    setPinDirection(int pin);
-    
-    getSpeed(int speed);
-    getDirection(int direction);
-    getPinSpeed(int pin);
-    getPinDirection(int pin);
+    void setSpeed(int speed);
+    void setDirection(int direction);
+    void setPinSpeed(int pin);
+    void setPinDirection(int pin);
+
+    int getSpeed(Motor motor);
+    int getDirection(Motor motor);
+    int getPinSpeed();
+    int getPinDirection();
     
     Motor();
   private:
@@ -22,3 +22,4 @@ class Motor{
     int _direction;
 };
 
+#endif
