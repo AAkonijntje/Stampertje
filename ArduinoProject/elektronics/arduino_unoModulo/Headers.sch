@@ -1,5 +1,34 @@
 EESchema Schematic File Version 2
 LIBS:Arduino_Uno_R3_From_Scratch-rescue
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
 LIBS:Arduino_Uno_R3_From_Scratch
 LIBS:MFN_Atmel
 LIBS:MFN_STMicro
@@ -8,7 +37,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 5 5
+Sheet 4 5
 Title "Arduino UNO R3 Clone"
 Date "8 oct 2015"
 Rev "0"
@@ -80,10 +109,10 @@ F 12 "~" H 6250 3325 60  0001 C CNN "Notes"
 $EndComp
 NoConn ~ 6050 2025
 $Comp
-L 5V_LDO #PWR035
+L 5V_LDO #PWR015
 U 1 1 55E95D7A
 P 5700 1875
-F 0 "#PWR035" H 5700 1965 20  0001 C CNN
+F 0 "#PWR015" H 5700 1965 20  0001 C CNN
 F 1 "5V_LDO" H 5700 1995 30  0000 C CNN
 F 2 "~" H 5700 1875 60  0000 C CNN
 F 3 "~" H 5700 1875 60  0000 C CNN
@@ -91,10 +120,10 @@ F 3 "~" H 5700 1875 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 3V3_LDO #PWR036
+L 3V3_LDO #PWR016
 U 1 1 55E95D89
 P 5400 1875
-F 0 "#PWR036" H 5400 1835 30  0001 C CNN
+F 0 "#PWR016" H 5400 1835 30  0001 C CNN
 F 1 "3V3_LDO" H 5400 1995 30  0000 C CNN
 F 2 "~" H 5400 1875 60  0000 C CNN
 F 3 "~" H 5400 1875 60  0000 C CNN
@@ -102,10 +131,10 @@ F 3 "~" H 5400 1875 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Vin #PWR037
+L Vin #PWR017
 U 1 1 55E95DA2
 P 5100 1875
-F 0 "#PWR037" H 5100 1965 20  0001 C CNN
+F 0 "#PWR017" H 5100 1965 20  0001 C CNN
 F 1 "VIN" H 5100 1995 30  0000 C CNN
 F 2 "~" H 5100 1875 60  0000 C CNN
 F 3 "~" H 5100 1875 60  0000 C CNN
@@ -117,10 +146,10 @@ Text HLabel 4700 2225 0    40   Input ~ 0
 Wire Wire Line
 	6050 2225 4700 2225
 $Comp
-L GND #PWR038
+L GND #PWR018
 U 1 1 55E9684A
 P 5700 2875
-F 0 "#PWR038" H 5700 2875 30  0001 C CNN
+F 0 "#PWR018" H 5700 2875 30  0001 C CNN
 F 1 "GND" H 5700 2805 30  0001 C CNN
 F 2 "~" H 5700 2875 60  0000 C CNN
 F 3 "~" H 5700 2875 60  0000 C CNN
@@ -271,10 +300,10 @@ F 12 "~" H 6250 5525 60  0001 C CNN "Notes"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR039
+L GND #PWR019
 U 1 1 56206FF2
 P 5700 4975
-F 0 "#PWR039" H 5700 4975 30  0001 C CNN
+F 0 "#PWR019" H 5700 4975 30  0001 C CNN
 F 1 "GND" H 5700 4905 30  0001 C CNN
 F 2 "~" H 5700 4975 60  0000 C CNN
 F 3 "~" H 5700 4975 60  0000 C CNN

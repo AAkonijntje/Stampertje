@@ -1,33 +1,5 @@
 EESchema Schematic File Version 2
-LIBS:power
-LIBS:device
-LIBS:transistors
-LIBS:conn
-LIBS:linear
-LIBS:regul
-LIBS:74xx
-LIBS:cmos4000
-LIBS:adc-dac
-LIBS:memory
-LIBS:xilinx
-LIBS:microcontrollers
-LIBS:dsp
-LIBS:microchip
-LIBS:analog_switches
-LIBS:motorola
-LIBS:texas
-LIBS:intel
-LIBS:audio
-LIBS:interface
-LIBS:digital-audio
-LIBS:philips
-LIBS:display
-LIBS:cypress
-LIBS:siliconi
-LIBS:opto
-LIBS:atmel
-LIBS:contrib
-LIBS:valves
+LIBS:Arduino_Uno_R3_From_Scratch-rescue
 LIBS:Arduino_Uno_R3_From_Scratch
 LIBS:MFN_Atmel
 LIBS:MFN_STMicro
@@ -36,7 +8,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 8 8
+Sheet 5 5
 Title "Arduino UNO R3 Clone"
 Date "8 oct 2015"
 Rev "0"
@@ -75,7 +47,9 @@ Connection ~ 5650 3050
 Text HLabel 4800 3750 0    40   Input ~ 0
 AREF
 Wire Wire Line
-	4800 3750 5850 3750
+	4800 3750 5100 3750
+Wire Wire Line
+	5100 3750 5850 3750
 $Comp
 L GND #PWR040
 U 1 1 55E8AA8C
@@ -91,7 +65,11 @@ F 6 "~" H 5600 6050 60  0001 C CNN "Notes"
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5600 4300 5600 4950
+	5600 4300 5600 4500
+Wire Wire Line
+	5600 4500 5600 4700
+Wire Wire Line
+	5600 4700 5600 4950
 Wire Wire Line
 	5600 4500 5850 4500
 Wire Wire Line
@@ -101,7 +79,11 @@ Connection ~ 5600 4700
 Wire Wire Line
 	5850 5500 5600 5500
 Wire Wire Line
-	5600 5250 5600 6050
+	5600 5250 5600 5500
+Wire Wire Line
+	5600 5500 5600 5700
+Wire Wire Line
+	5600 5700 5600 6050
 Wire Wire Line
 	5850 5700 5600 5700
 Connection ~ 5600 5700
@@ -111,32 +93,14 @@ Wire Wire Line
 Connection ~ 5100 3750
 Wire Wire Line
 	5100 4300 5100 4550
-Text HLabel 1250 5650 0    40   Input ~ 0
-SERIAL_Rx
-Text HLabel 1250 5900 0    40   Input ~ 0
-SERIAL_Tx
 Wire Wire Line
-	8250 6100 9350 6100
+	8250 6100 8400 6100
 Wire Wire Line
-	8400 6100 8400 6275
+	8400 6100 9350 6100
 Wire Wire Line
-	8400 6275 4600 6275
+	8250 5900 8550 5900
 Wire Wire Line
-	4600 6275 4600 5650
-Wire Wire Line
-	4600 5650 2850 5650
-Wire Wire Line
-	8250 5900 9350 5900
-Wire Wire Line
-	8550 5900 8550 6425
-Wire Wire Line
-	8550 6425 4450 6425
-Wire Wire Line
-	2850 5900 4450 5900
-Wire Wire Line
-	1250 5900 2550 5900
-Wire Wire Line
-	1250 5650 2550 5650
+	8550 5900 9350 5900
 Text HLabel 9350 3250 2    40   Input ~ 0
 ARD_AN5/SCL
 Text HLabel 9350 3450 2    40   Input ~ 0
@@ -177,8 +141,6 @@ Text HLabel 9350 5900 2    40   Input ~ 0
 ARD_DIG1
 Text HLabel 9350 6100 2    40   Input ~ 0
 ARD_DIG0
-Connection ~ 8400 6100
-Connection ~ 8550 5900
 Wire Wire Line
 	8250 5700 9350 5700
 Wire Wire Line
@@ -210,44 +172,29 @@ Wire Wire Line
 Wire Wire Line
 	9350 2100 8250 2100
 Wire Wire Line
-	8250 1900 9350 1900
+	8250 1900 8400 1900
 Wire Wire Line
-	8250 1700 9350 1700
+	8400 1900 9350 1900
 Wire Wire Line
-	8250 1500 9350 1500
-Text HLabel 1250 1500 0    40   Input ~ 0
-DTR
-$Comp
-L R R12
-U 1 1 55E8B3B8
-P 1550 1950
-F 0 "R12" V 1630 1950 40  0000 C CNN
-F 1 "1K" V 1557 1951 40  0000 C CNN
-F 2 "~" V 1480 1950 30  0000 C CNN
-F 3 "http://images.ihscontent.net/vipimages/VipMasterIC/IC/VISH/VISHS75859/VISHS75859-1.pdf" H 1550 1950 30  0001 C CNN
-F 4 "METAL GLAZE/THICK FILM, 0.125W, 5%, 200ppm, 1000ohm, SURFACE MOUNT, 0805," H 1550 1950 60  0001 C CNN "Characteristics"
-F 5 "ATMEGA328P DTR Pull Down Resistor" H 1550 1950 60  0001 C CNN "Description"
-F 6 "Vishay" H 1550 1950 60  0001 C CNN "MFN"
-F 7 "CRCW08051K00JNEA" H 1550 1950 60  0001 C CNN "MFP"
-F 8 "SMD_0805" H 1550 1950 60  0001 C CNN "Package ID"
-F 9 "ANY" H 1550 1950 60  0001 C CNN "Source"
-F 10 "N" H 1550 1950 60  0001 C CNN "Critical"
-F 11 "328P_Sub" H 1550 1950 60  0001 C CNN "Subsystem"
-F 12 "~" H 1550 1950 60  0001 C CNN "Notes"
-	1    1550 1950
-	1    0    0    -1  
-$EndComp
+	8250 1700 8400 1700
 Wire Wire Line
-	1250 1500 1900 1500
+	8400 1700 9350 1700
 Wire Wire Line
-	1550 1500 1550 1800
-Connection ~ 1550 1500
+	8250 1500 8400 1500
+Wire Wire Line
+	8400 1500 9350 1500
 Text HLabel 9350 750  2    40   Input ~ 0
 328P_RESET
 Wire Wire Line
-	2850 1500 5850 1500
+	3200 1500 3400 1500
 Wire Wire Line
-	4450 5900 4450 6425
+	3400 1500 4900 1500
+Wire Wire Line
+	4900 1500 5300 1500
+Wire Wire Line
+	5300 1500 5650 1500
+Wire Wire Line
+	5650 1500 5850 1500
 $Comp
 L CONN_02X03 ICSP2
 U 1 1 55E8CAAE
@@ -289,7 +236,9 @@ F 12 "~" H 5300 1200 60  0001 C CNN "Notes"
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	4900 650  4900 1050
+	4900 650  4900 750 
+Wire Wire Line
+	4900 750  4900 1050
 Wire Wire Line
 	5300 1350 5300 1500
 Wire Wire Line
@@ -297,7 +246,9 @@ Wire Wire Line
 Connection ~ 5300 1500
 Connection ~ 4900 750 
 Wire Wire Line
-	4050 750  5300 750 
+	4050 750  4900 750 
+Wire Wire Line
+	4900 750  5300 750 
 Wire Wire Line
 	4350 950  4350 1100
 Wire Wire Line
@@ -340,9 +291,6 @@ Text GLabel 4300 850  2    40   Input ~ 0
 328P_ICSP_MOSI
 Wire Wire Line
 	4050 850  4300 850 
-Connection ~ 3200 1500
-Wire Wire Line
-	2200 1500 2550 1500
 $Comp
 L RESET_SWITCH SW1
 U 1 1 55E8D514
@@ -376,8 +324,6 @@ Wire Wire Line
 	5650 750  9350 750 
 Connection ~ 5650 1500
 Wire Wire Line
-	1550 2100 1550 2425
-Wire Wire Line
 	3200 950  3200 1500
 $Comp
 L 5V_LDO #PWR041
@@ -402,26 +348,6 @@ F 3 "~" H 5600 4300 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R13
-U 1 1 55EAC911
-P 2700 1500
-F 0 "R13" V 2780 1500 40  0000 C CNN
-F 1 "0" V 2707 1501 40  0000 C CNN
-F 2 "~" V 2630 1500 30  0000 C CNN
-F 3 "http://industrial.panasonic.com/www-cgi/jvcr13pz.cgi?E+PZ+3+AOA0001+ERJ6GEY0R00V+7+WW" H 2700 1500 30  0001 C CNN
-F 4 "RES SMD 0.0 OHM JUMPER 1/8W 0805" H 2700 1500 60  0001 C CNN "Characteristics"
-F 5 "ATMEGA328P DTR 0R Link" H 2700 1500 60  0001 C CNN "Description"
-F 6 "Panasonic" H 2700 1500 60  0001 C CNN "MFN"
-F 7 "ERJ-6GEY0R00V" H 2700 1500 60  0001 C CNN "MFP"
-F 8 "SMD_0805" H 2700 1500 60  0001 C CNN "Package ID"
-F 9 "ANY" H 2700 1500 60  0001 C CNN "Source"
-F 10 "N" H 2700 1500 60  0001 C CNN "Critical"
-F 11 "328P_Sub" H 2700 1500 60  0001 C CNN "Subsystem"
-F 12 "~" H 2700 1500 60  0001 C CNN "Notes"
-	1    2700 1500
-	0    -1   -1   0   
-$EndComp
-$Comp
 L CERAMIC_RESONATOR X2
 U 1 1 5614A1DB
 P 5250 2550
@@ -442,13 +368,17 @@ F 12 "~" H 5250 2550 60  0001 C CNN "Notes"
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	5300 2050 5850 2050
+	5300 2050 5650 2050
+Wire Wire Line
+	5650 2050 5850 2050
 Wire Wire Line
 	5300 2050 5300 2150
 Wire Wire Line
 	5300 2950 5300 3050
 Wire Wire Line
-	5300 3050 5850 3050
+	5300 3050 5650 3050
+Wire Wire Line
+	5650 3050 5850 3050
 Wire Wire Line
 	5050 2550 4750 2550
 Wire Wire Line
@@ -516,66 +446,6 @@ F 12 "~" H 4900 1200 60  0001 C CNN "Notes"
 	-1   0    0    1   
 $EndComp
 $Comp
-L R R14
-U 1 1 5615AAC4
-P 2700 5650
-F 0 "R14" V 2780 5650 40  0000 C CNN
-F 1 "1K" V 2707 5651 40  0000 C CNN
-F 2 "~" V 2630 5650 30  0000 C CNN
-F 3 "http://images.ihscontent.net/vipimages/VipMasterIC/IC/VISH/VISHS75859/VISHS75859-1.pdf" H 2700 5650 30  0001 C CNN
-F 4 "METAL GLAZE/THICK FILM, 0.125W, 5%, 200ppm, 1000ohm, SURFACE MOUNT, 0805," H 2700 5650 60  0001 C CNN "Characteristics"
-F 5 "ATMEGA328P Serial Tx Terminator" H 2700 5650 60  0001 C CNN "Description"
-F 6 "Vishay" H 2700 5650 60  0001 C CNN "MFN"
-F 7 "CRCW08051K00JNEA" H 2700 5650 60  0001 C CNN "MFP"
-F 8 "SMD_0805" H 2700 5650 60  0001 C CNN "Package ID"
-F 9 "ANY" H 2700 5650 60  0001 C CNN "Source"
-F 10 "N" H 2700 5650 60  0001 C CNN "Critical"
-F 11 "328P_Sub" H 2700 5650 60  0001 C CNN "Subsystem"
-F 12 "~" H 2700 5650 60  0001 C CNN "Notes"
-	1    2700 5650
-	0    -1   -1   0   
-$EndComp
-$Comp
-L R R15
-U 1 1 5615AB21
-P 2700 5900
-F 0 "R15" V 2780 5900 40  0000 C CNN
-F 1 "1K" V 2707 5901 40  0000 C CNN
-F 2 "~" V 2630 5900 30  0000 C CNN
-F 3 "http://images.ihscontent.net/vipimages/VipMasterIC/IC/VISH/VISHS75859/VISHS75859-1.pdf" H 2700 5900 30  0001 C CNN
-F 4 "METAL GLAZE/THICK FILM, 0.125W, 5%, 200ppm, 1000ohm, SURFACE MOUNT, 0805," H 2700 5900 60  0001 C CNN "Characteristics"
-F 5 "ATMEGA328P Serial Rx Terminator" H 2700 5900 60  0001 C CNN "Description"
-F 6 "Vishay" H 2700 5900 60  0001 C CNN "MFN"
-F 7 "CRCW08051K00JNEA" H 2700 5900 60  0001 C CNN "MFP"
-F 8 "SMD_0805" H 2700 5900 60  0001 C CNN "Package ID"
-F 9 "ANY" H 2700 5900 60  0001 C CNN "Source"
-F 10 "N" H 2700 5900 60  0001 C CNN "Critical"
-F 11 "328P_Sub" H 2700 5900 60  0001 C CNN "Subsystem"
-F 12 "~" H 2700 5900 60  0001 C CNN "Notes"
-	1    2700 5900
-	0    -1   -1   0   
-$EndComp
-$Comp
-L C C11
-U 1 1 5615AE65
-P 2050 1500
-F 0 "C11" H 2100 1600 40  0000 L CNN
-F 1 "0.1 uF" H 2100 1400 40  0000 L CNN
-F 2 "~" H 2088 1350 30  0000 C CNN
-F 3 "http://images.ihscontent.net/vipimages/VipMasterIC/IC/KEME/KEMES10043/KEMES10043-1.pdf" H 2050 1500 60  0001 C CNN
-F 4 "CAPACITOR, CERAMIC, MULTILAYER, 100 V, X7R, 0.1 uF, SURFACE MOUNT, 0805, CHIP, ROHS COMPLIANT" H 2050 1500 60  0001 C CNN "Characteristics"
-F 5 "ATMEGA328P Reset Cap" H 2050 1500 60  0001 C CNN "Description"
-F 6 "Kemet" H 2050 1500 60  0001 C CNN "MFN"
-F 7 "C0805C104K1RACAUTO" H 2050 1500 60  0001 C CNN "MFP"
-F 8 "SMD_0805" H 2050 1500 60  0001 C CNN "Package ID"
-F 9 "ANY" H 2050 1500 60  0001 C CNN "Source"
-F 10 "N" H 2050 1500 60  0001 C CNN "Critical"
-F 11 "328P_Sub" H 2050 1500 60  0001 C CNN "Subsystem"
-F 12 "~" H 2050 1500 60  0001 C CNN "Notes"
-	1    2050 1500
-	0    -1   -1   0   
-$EndComp
-$Comp
 L R R17
 U 1 1 5615BCD3
 P 5650 2550
@@ -598,13 +468,17 @@ $EndComp
 Wire Wire Line
 	3500 1650 3500 1775
 Wire Wire Line
-	3300 1650 3500 1650
+	3300 1650 3400 1650
+Wire Wire Line
+	3400 1650 3500 1650
 Wire Wire Line
 	3300 1775 3300 1650
 Wire Wire Line
 	3500 2275 3500 2175
 Wire Wire Line
-	3300 2275 3500 2275
+	3300 2275 3400 2275
+Wire Wire Line
+	3400 2275 3500 2275
 Wire Wire Line
 	3300 2275 3300 2175
 $Comp
@@ -647,20 +521,6 @@ F 4 "ANY" H 3400 2425 60  0001 C CNN "Source"
 F 5 "N" H 3400 2425 60  0001 C CNN "Critical"
 F 6 "~" H 3400 2425 60  0001 C CNN "Notes"
 	1    3400 2425
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR046
-U 1 1 56207AE4
-P 1550 2425
-F 0 "#PWR046" H 1550 2425 30  0001 C CNN
-F 1 "GND" H 1550 2355 30  0001 C CNN
-F 2 "~" H 1550 2425 60  0000 C CNN
-F 3 "~" H 1550 2425 60  0000 C CNN
-F 4 "ANY" H 1550 2425 60  0001 C CNN "Source"
-F 5 "N" H 1550 2425 60  0001 C CNN "Critical"
-F 6 "~" H 1550 2425 60  0001 C CNN "Notes"
-	1    1550 2425
 	1    0    0    -1  
 $EndComp
 $Comp

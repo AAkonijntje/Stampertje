@@ -1,5 +1,34 @@
 EESchema Schematic File Version 2
 LIBS:Arduino_Uno_R3_From_Scratch-rescue
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
 LIBS:Arduino_Uno_R3_From_Scratch
 LIBS:MFN_Atmel
 LIBS:MFN_STMicro
@@ -141,7 +170,7 @@ F 12 "~" H 7800 3625 60  0001 C CNN "Notes"
 	-1   0    0    1   
 $EndComp
 $Comp
-L LED D2
+L LED-RESCUE-Arduino_Uno_R3_From_Scratch D2
 U 1 1 55D1FC7B
 P 7800 4125
 F 0 "D2" H 7800 4225 50  0000 C CNN

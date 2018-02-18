@@ -1,5 +1,34 @@
 EESchema Schematic File Version 2
 LIBS:Arduino_Uno_R3_From_Scratch-rescue
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
 LIBS:Arduino_Uno_R3_From_Scratch
 LIBS:MFN_Atmel
 LIBS:MFN_STMicro
@@ -39,11 +68,7 @@ F 12 "~" H 7000 4500 60  0001 C CNN "Notes"
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5400 4200 5650 4200
-Wire Wire Line
-	5650 4200 5900 4200
-Wire Wire Line
-	5900 4200 6200 4200
+	5400 4200 6200 4200
 Wire Wire Line
 	5900 4200 5900 4400
 Wire Wire Line
@@ -75,9 +100,7 @@ $EndComp
 Wire Wire Line
 	7800 4200 8000 4200
 Wire Wire Line
-	8000 4000 8000 4200
-Wire Wire Line
-	8000 4200 8000 4450
+	8000 4000 8000 4450
 Wire Wire Line
 	8000 4750 8000 5325
 Connection ~ 8000 4200
@@ -117,10 +140,10 @@ Connection ~ 5650 4200
 Wire Wire Line
 	5650 4750 5650 5325
 $Comp
-L 3V3_LDO #PWR013
+L 3V3_LDO #PWR010
 U 1 1 55E95795
 P 8000 4000
-F 0 "#PWR013" H 8000 3960 30  0001 C CNN
+F 0 "#PWR010" H 8000 3960 30  0001 C CNN
 F 1 "3V3_LDO" H 8000 4120 30  0000 C CNN
 F 2 "~" H 8000 4000 60  0000 C CNN
 F 3 "~" H 8000 4000 60  0000 C CNN
@@ -128,10 +151,10 @@ F 3 "~" H 8000 4000 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L 5V_LDO #PWR014
+L 5V_LDO #PWR011
 U 1 1 55E957AE
 P 5400 3700
-F 0 "#PWR014" H 5400 3790 20  0001 C CNN
+F 0 "#PWR011" H 5400 3790 20  0001 C CNN
 F 1 "5V_LDO" H 5400 3820 30  0000 C CNN
 F 2 "~" H 5400 3700 60  0000 C CNN
 F 3 "~" H 5400 3700 60  0000 C CNN
@@ -139,10 +162,10 @@ F 3 "~" H 5400 3700 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR018
+L GND #PWR012
 U 1 1 561FE56D
 P 5650 5325
-F 0 "#PWR018" H 5650 5325 30  0001 C CNN
+F 0 "#PWR012" H 5650 5325 30  0001 C CNN
 F 1 "GND" H 5650 5255 30  0001 C CNN
 F 2 "~" H 5650 5325 60  0000 C CNN
 F 3 "~" H 5650 5325 60  0000 C CNN
@@ -153,10 +176,10 @@ F 6 "~" H 5650 5325 60  0001 C CNN "Notes"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR019
+L GND #PWR013
 U 1 1 561FE596
 P 7000 5325
-F 0 "#PWR019" H 7000 5325 30  0001 C CNN
+F 0 "#PWR013" H 7000 5325 30  0001 C CNN
 F 1 "GND" H 7000 5255 30  0001 C CNN
 F 2 "~" H 7000 5325 60  0000 C CNN
 F 3 "~" H 7000 5325 60  0000 C CNN
@@ -167,10 +190,10 @@ F 6 "~" H 7000 5325 60  0001 C CNN "Notes"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR020
+L GND #PWR014
 U 1 1 561FE5BF
 P 8000 5325
-F 0 "#PWR020" H 8000 5325 30  0001 C CNN
+F 0 "#PWR014" H 8000 5325 30  0001 C CNN
 F 1 "GND" H 8000 5255 30  0001 C CNN
 F 2 "~" H 8000 5325 60  0000 C CNN
 F 3 "~" H 8000 5325 60  0000 C CNN
