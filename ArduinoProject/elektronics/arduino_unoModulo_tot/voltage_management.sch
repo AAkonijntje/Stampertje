@@ -33,11 +33,12 @@ LIBS:Arduino_Uno_R3_From_Scratch
 LIBS:MFN_Atmel
 LIBS:MFN_STMicro
 LIBS:Arduino_Uno_R3_From_Scratch-cache
+LIBS:L298_Driver-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 5
+Sheet 3 6
 Title "Arduino UNO R3 Clone"
 Date "8 oct 2015"
 Rev "0"
@@ -53,7 +54,7 @@ U 1 1 55D1286F
 P 7000 4500
 F 0 "U3" H 7200 4050 60  0000 C CNN
 F 1 "LP2985-33DBVR" H 7000 4950 60  0000 C CNN
-F 2 "~" H 7000 4500 60  0000 C CNN
+F 2 "" H 7000 4500 60  0001 C CNN
 F 3 "http://www.ti.com/lit/ds/symlink/lp2985-33.pdf" H 7000 4500 60  0001 C CNN
 F 4 "3.3V FIXED POSITIVE LDO REGULATOR, 0.575V DROPOUT" H 7000 4500 60  0001 C CNN "Characteristics"
 F 5 "3V3 Fixed LDO Regulator" H 7000 4500 60  0001 C CNN "Description"
@@ -83,7 +84,7 @@ U 1 1 55D12923
 P 8000 4600
 F 0 "C6" H 8000 4700 40  0000 L CNN
 F 1 "2.2uF" H 8006 4515 40  0000 L CNN
-F 2 "~" H 8038 4450 30  0000 C CNN
+F 2 "" H 8038 4450 30  0001 C CNN
 F 3 "http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf" H 8000 4600 60  0001 C CNN
 F 4 "CAP CER 2.2UF 16V X7R 0805" H 8000 4600 60  0001 C CNN "Characteristics"
 F 5 "2.2uF 3V3 LDO Output Cap" H 8000 4600 60  0001 C CNN "Description"
@@ -120,7 +121,7 @@ U 1 1 55D74BB5
 P 5650 4600
 F 0 "C5" H 5650 4700 40  0000 L CNN
 F 1 "1uF" H 5656 4515 40  0000 L CNN
-F 2 "~" H 5688 4450 30  0000 C CNN
+F 2 "" H 5688 4450 30  0001 C CNN
 F 3 "http://www.kemet.com/docfinder?Partnumber=C0805C105K8RACAUTO" H 5650 4600 60  0001 C CNN
 F 4 "CAPACITOR, CERAMIC, MULTILAYER, 10 V, X7R, 1 uF, SURFACE MOUNT, 0805" H 5650 4600 60  0001 C CNN "Characteristics"
 F 5 "3V3 LDO Input Cap" H 5650 4600 60  0001 C CNN "Description"

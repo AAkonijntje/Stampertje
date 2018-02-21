@@ -73,7 +73,7 @@ U 1 1 55E9474B
 P 6250 4375
 F 0 "P3" H 6450 4250 60  0000 C CNN
 F 1 "Digital Header 02" H 6400 4375 60  0000 L CNN
-F 2 "Connectors_Samtec:SL-110-X-XX_1x10" H 6250 4375 60  0001 C CNN
+F 2 "Connectors_Phoenix:PhoenixContact_PTSM0,5_10-2,5-V_SMD" H 6250 4375 60  0001 C CNN
 F 3 "http://sullinscorp.com/catalogs/101_PAGE114-115_.100_FEMALE_HDR.pdf" H 6250 4375 60  0001 C CNN
 F 4 "Connector Header 10 Position 0.100\" (2.54mm) Gold Surface Mount" H 6250 4375 60  0001 C CNN "Characteristics"
 F 5 "Shield Header 10POS - DIG02" H 6250 4375 60  0001 C CNN "Description"
@@ -285,7 +285,7 @@ U 1 1 5615BF57
 P 6250 5525
 F 0 "P4" H 6400 5650 60  0000 L CNN
 F 1 "Digital Header 01" H 6400 5525 60  0000 L CNN
-F 2 "Connectors_Phoenix:PhoenixContact_PTSM0,5_8-2,5-V_SMD" H 6250 5525 60  0001 C CNN
+F 2 "Diodes_SMD:D_MELF-RM10_Universal_Handsoldering" H 6250 5525 60  0001 C CNN
 F 3 "http://sullinscorp.com/catalogs/101_PAGE114-115_.100_FEMALE_HDR.pdf" H 6250 5525 60  0001 C CNN
 F 4 "Connector Header 8 Position 0.100\" (2.54mm) Gold Surface Mount" H 6250 5525 60  0001 C CNN "Characteristics"
 F 5 "Shield Header 8POS - DIG01" H 6250 5525 60  0001 C CNN "Description"

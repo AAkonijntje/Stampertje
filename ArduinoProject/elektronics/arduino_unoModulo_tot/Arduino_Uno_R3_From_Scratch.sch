@@ -33,11 +33,12 @@ LIBS:Arduino_Uno_R3_From_Scratch
 LIBS:MFN_Atmel
 LIBS:MFN_STMicro
 LIBS:Arduino_Uno_R3_From_Scratch-cache
+LIBS:L298_Driver-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 5
+Sheet 1 6
 Title "Arduino UNO R3 Clone"
 Date "8 oct 2015"
 Rev "0"
@@ -159,4 +160,10 @@ Wire Wire Line
 	7050 5900 7550 5900
 Wire Wire Line
 	7550 6150 7050 6150
+$Sheet
+S 2100 3500 1450 1200
+U 5A8D7699
+F0 "L298_Driver." 60
+F1 "L298_Driver.sch" 60
+$EndSheet
 $EndSCHEMATC

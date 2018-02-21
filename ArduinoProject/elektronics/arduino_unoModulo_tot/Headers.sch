@@ -33,11 +33,12 @@ LIBS:Arduino_Uno_R3_From_Scratch
 LIBS:MFN_Atmel
 LIBS:MFN_STMicro
 LIBS:Arduino_Uno_R3_From_Scratch-cache
+LIBS:L298_Driver-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 4 5
+Sheet 4 6
 Title "Arduino UNO R3 Clone"
 Date "8 oct 2015"
 Rev "0"
