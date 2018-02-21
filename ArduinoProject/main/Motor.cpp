@@ -33,16 +33,18 @@ int Motor::getDirectionPin(){
 // ############################### Bewegingen #####################
 //max: 255 min: 40 A rechts, B links
 void Motor::forward(Motor motorA, Motor motorB){
+   int snelheid = 70;
   digitalWrite(motorA.getDirectionPin(), HIGH  );
   digitalWrite(motorB.getDirectionPin(), LOW);
-  analogWrite(motorA.getSpeedPin(),50);
-  analogWrite(motorB.getSpeedPin(),50);
+  analogWrite(motorA.getSpeedPin(),snelheid);
+  analogWrite(motorB.getSpeedPin(),snelheid);
 }
 void Motor::backward(Motor motorA, Motor motorB){
+   int snelheid =70;
   digitalWrite(motorA.getDirectionPin(), LOW  );
   digitalWrite(motorB.getDirectionPin(), HIGH);
-  analogWrite(motorA.getSpeedPin(),50);
-  analogWrite(motorB.getSpeedPin(),50);
+  analogWrite(motorA.getSpeedPin(),snelheid);
+  analogWrite(motorB.getSpeedPin(),snelheid);
 }
 void Motor::Stilstand(Motor motorA, Motor motorB){
   digitalWrite(motorA.getDirectionPin(), LOW  );
@@ -51,48 +53,51 @@ void Motor::Stilstand(Motor motorA, Motor motorB){
   analogWrite(motorB.getSpeedPin(),0);
 }
 void Motor::Bijsturen(Motor motorA, Motor motorB, int hoek){
+  int snelheid = 70;
   if (hoek>0){// Rechts draaiien
-      int a= 50-hoek;  
+      int a= snelheid-hoek;  
       digitalWrite(motorA.getDirectionPin(), HIGH  );
       digitalWrite(motorB.getDirectionPin(), LOW);
-      analogWrite(motorA.getSpeedPin(),50);
+      analogWrite(motorA.getSpeedPin(),snelheid);
       analogWrite(motorB.getSpeedPin(),a);
   }else if (hoek<0){// links draaiien
-      int a= 50-hoek;  
+      int a=snelheid+hoek;  
       digitalWrite(motorA.getDirectionPin(), HIGH  );
       digitalWrite(motorB.getDirectionPin(), LOW);;
-      analogWrite(motorA.getSpeedPin(),a);
-      analogWrite(motorB.getSpeedPin(),50);
+      analogWrite(motorA.getSpeedPin(),a);//linkermotor
+      analogWrite(motorB.getSpeedPin(),snelheid);
+  }
+  if (hoek=25){
+    delay(30);//delay bij overshoot
   }
 }
 //############################### Berekening Hoek #####################
 int Motor::Hoekberekenen(int si1, int si2){
 //si1 is sensor op de rand (600-250),si2 is sensor op het zwart 600+, wit is 250-
-  
+  int wit=500;
+  int zwart=800;
 //sensor wijkt meer en meer af naar links  
-  if ((si1>250)&&(si1<600)&&(si2>600)){
-    return 0;
-    Serial.print("geval:1");
-    Serial.print(" \n");
-  }
-  if ((si1<250)&&(si2>600)){
+  if ((si2<wit)||(si1<wit)){
+    return 25;//verander ook delay bij overshoot
+  } 
+  if ((si1<wit)&&(si2>wit)&&(si2<zwart)){
     return 10;
-    Serial.print("geval: 2");
-    Serial.print(" \n");
+    Serial.println("geval:  3");
   }
-  if ((si1<250)&&(si2>250)&&(si2<600)){
-    return 15;
-    Serial.print("geval:  3");
-    Serial.print(" \n");
+  if ((si1<wit)&&(si2>zwart)){
+    return 5;
+    Serial.println("geval: 2");
   }
-  if ((si2<250)){
-    return 20;
-  }  
+  if ((si1>wit)&&(si1<zwart)&&(si2>zwart)){
+    return 0;
+    Serial.println("geval:1");
+ }
+
+  
 //sensor wijkt meer en meer af naar rechts
-  if ((si1>600)&&(si2>600)){
-    return -15;
-    Serial.print("geval:   4");
-    Serial.print(" \n");
+  if ((si1>zwart)&&(si2>zwart)){
+    return -10;
+    Serial.println("geval:   4");
   }
 }
 

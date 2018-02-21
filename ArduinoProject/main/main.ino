@@ -1,5 +1,6 @@
 #include <Servo.h>
 #include "motor.h"
+//#include <TimerOne.h>
 
 //toevoegen van motor 1&2
 Motor motor1=Motor(1,255,3,12);
@@ -27,7 +28,7 @@ pinMode(A1, INPUT);//rechts senor
 
 void loop() {
 
-  motor1.forward(motor1, motor2);
+  
 
   sensorinput1=analogRead(A0);//L
   sensorinput2=analogRead(A1);//R
@@ -37,13 +38,12 @@ void loop() {
   Serial.print(" \n");
   
   hoek=motor1.Hoekberekenen(sensorinput1,sensorinput2);
-  motor1.Bijsturen(motor1, motor2, hoek);
-
   Serial.print("Hoek:");
   Serial.print(hoek);
   Serial.print(" \n");
-  
 
-delay(25);
+  motor1.Bijsturen(motor1, motor2, hoek);
+
+  delay(25);
 
 }
