@@ -21,7 +21,7 @@ class Motor{
     void backward(Motor motorA, Motor motorB);
     void Bijsturen(Motor motorA, Motor motorB, int hoek);
     void Stilstand(Motor motorA, Motor motorB);
-    void Hoekberekenen(int si1, int si2);
+    int Hoekberekenen(int si1, int si2);
     
   private:
     int _speed;
