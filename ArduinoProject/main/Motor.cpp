@@ -53,7 +53,7 @@ void Motor::Stilstand(Motor motorA, Motor motorB){
   analogWrite(motorB.getSpeedPin(),0);
 }
 void Motor::Bijsturen(Motor motorA, Motor motorB, int hoek){
-  int snelheid =200;
+  int snelheid =55;
       int a= snelheid+hoek/2;  
       int b= snelheid-hoek/2;  
       digitalWrite(motorA.getDirectionPin(), HIGH  );
@@ -61,46 +61,47 @@ void Motor::Bijsturen(Motor motorA, Motor motorB, int hoek){
       analogWrite(motorA.getSpeedPin(),a);// linkermotor
       analogWrite(motorB.getSpeedPin(),b);// rechtermotor
 
-  if (hoek=25){
-    delay(30);//delay bij overshoot
+  if ((hoek=25)||(hoek=50)){
+    delay(15);//delay bij overshoot
   }
 }
 //############################### Berekening Hoek #####################
 int Motor::Hoekberekenen(int si1, int si2){
-//si1 is sensor op de rand (600-250),si2 is sensor op het zwart 600+, wit is 250-
-  int wit=500;
-  int zwart=800;
+//si1 is sensor op de rand (800-500),si2 is sensor op het zwart 600+, wit is 500-
+  int wit=250;
+  int zwart=500;
 //sensor wijkt meer en meer af naar links  
-  if ((si1>zwart)&&(si2>zwart)){//sensor wijkt meer en meer af naar rechts
-    Serial.println("  geval:      6");
-    return -30;
+  if ((si1>zwart)&&(si2>zwart)){//sensor zit volledig in het zwart
+    Serial.println("  geval:twee keer ZWART");
+    return -20;
   }
   if ((si1>wit)&&(si1<zwart)&&(si2>zwart)){//eerste sensor zit in buffer, tweede in zwart
-    Serial.println("  geval:1"); 
+    Serial.println("  geval:gewenste situatie"); 
     return 0;
  }
    if ((si1>wit)&&(si1<zwart)&&(si2>wit)&&(si2<zwart)){//eerste sensor zit in buffer, tweede in buffer
-    Serial.println("  geval:1"); 
-    return 0;
+    Serial.println("  geval:beide in BUFFER"); 
+    return 5;
  }
   if ((si1<wit)&&(si2>zwart)){//eerste sensor in wit, tweede in zwart
-    Serial.println("  geval: 2");
+    Serial.println("  geval:eerste in wit tweede in ZWART");
     return 5;
   }
-
-  if (si2<wit){ // tweede sensor zit op het wit
-    Serial.println("  geval:   5");
-    return 50;//verander ook delay bij overshoot
-  } 
+  if ((si1<wit)&&(si2>wit)){//eerste sensor zit in wit
+    Serial.println("  geval:eerste in WIT");
+    return 10;
+  }
   if ((si2<wit)&&(si1<wit)){ // beide sensoren zitten op het wit
-    Serial.println("  geval:   4");
+    Serial.println("  geval:beide in WIT");
     return 25;//verander ook delay bij overshoot
   } 
-  if (si1<wit){//eerste sensor zit in wit
-    Serial.println("  geval:  3");
-    return 10;
-  }else {
-Serial.println("  geval:0000");
+  if (si2<wit){ // tweede sensor zit op het wit
+    Serial.println("  geval:tweede in WIT");
+    return 50;//verander ook delay bij overshoot
+  } 
+
+else {
+Serial.println("  geval:ongedefinieerd geval ---------------------------");
   return 0;
  }
 }
