@@ -6,7 +6,19 @@
 class PID{
 	public:
 		PID();
-//    PID(Kp,Ki,Kd);
+    PID(int Kp, int Ki, int Kd);
+
+    int calculatePID(int val);
+
+  private:
+    //PID variabelen
+    int Kp;
+    int Ki;
+    int Kd;
+    //PID regeling
+    int P,I,D;
+    int PIDvalue;
+    int previousError;
     
 };
 
