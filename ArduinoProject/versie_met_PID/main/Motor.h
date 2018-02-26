@@ -5,8 +5,9 @@
 class Motor{
   public:
          Motor();
-         void rotate(int PIDvalue);
-         void slowDown(int PIDvalue);
-         void speedUp(int PIDvalue);
+         Motor(int pref_speed);
+         void rotate(int PIDvalue, int dir);
+  private:
+         void alterSpeed();
 };
 #endif

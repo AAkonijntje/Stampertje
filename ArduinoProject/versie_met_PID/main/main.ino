@@ -13,9 +13,7 @@ Motor motor;
 //PID waarden
 const int div_val = 40;
 int Z_ref, W_ref;
-int steeringPIDValue;
 PID steeringPID;
-PID speedPID;
 
 //search start position: blinkey LED
 boolean searchStartPos;
@@ -34,7 +32,7 @@ void setup() {
   pinMode(ledpin, OUTPUT);//blinky LED
 
   //setup motor
-  motor = Motor();
+  motor = Motor(80);
   
   //setup sturingPID
   searchStartPos = true;
@@ -52,8 +50,9 @@ void loop() {
   } else {
     W_sens=int(analogRead(A0)/div_val);//Wit
     Z_sens=int(analogRead(A1)/div_val);//Zwart
-    steeringPIDValue = steeringPID.calculatePID(5);
-    motor.rotate(steeringPIDValue);
+
+    //Als Z_ref-Z_sens groter is dan nul, moet men naar rechts draaien: dir = +1 en anders naar links: dir = -1
+    motor.rotate(steeringPID.calculatePID(max(abs(W_ref - W_sens), abs(Z_ref - Z_sens))), (Z_ref-Z_sens)/abs(Z_ref-Z_sens));
   } 
   delay(300);
 }
