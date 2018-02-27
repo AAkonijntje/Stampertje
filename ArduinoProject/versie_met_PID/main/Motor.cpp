@@ -32,8 +32,8 @@ void Motor::rotate(int PIDvalue, int dir){
 
 void Motor::alterSpeed(){
   int change = pref_speed - max(speed_left_motor, speed_right_motor);
-  speed_left_motor += speed_left_motor;
-  speed_right_motor += speed_right_motor;
+  speed_left_motor += change;
+  speed_right_motor += change;
   
   analogWrite(speed_pin_motor1, speed_left_motor);
   analogWrite(speed_pin_motor2, speed_right_motor);
