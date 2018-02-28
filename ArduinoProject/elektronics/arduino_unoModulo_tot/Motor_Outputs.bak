@@ -1,0 +1,244 @@
+EESchema Schematic File Version 2
+LIBS:Arduino_Uno_R3_From_Scratch-rescue
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:Arduino_Uno_R3_From_Scratch
+LIBS:MFN_Atmel
+LIBS:MFN_STMicro
+LIBS:Arduino_Uno_R3_From_Scratch-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 8 8
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L D D2
+U 1 1 5A967A8A
+P 4200 2800
+F 0 "D2" H 4200 2900 50  0000 C CNN
+F 1 "D" H 4200 2700 50  0000 C CNN
+F 2 "" H 4200 2800 50  0001 C CNN
+F 3 "" H 4200 2800 50  0001 C CNN
+	1    4200 2800
+	0    1    1    0   
+$EndComp
+$Comp
+L D D4
+U 1 1 5A967B82
+P 4700 2800
+F 0 "D4" H 4700 2900 50  0000 C CNN
+F 1 "D" H 4700 2700 50  0000 C CNN
+F 2 "" H 4700 2800 50  0001 C CNN
+F 3 "" H 4700 2800 50  0001 C CNN
+	1    4700 2800
+	0    1    1    0   
+$EndComp
+$Comp
+L D D6
+U 1 1 5A967BCC
+P 5250 2800
+F 0 "D6" H 5250 2900 50  0000 C CNN
+F 1 "D" H 5250 2700 50  0000 C CNN
+F 2 "" H 5250 2800 50  0001 C CNN
+F 3 "" H 5250 2800 50  0001 C CNN
+	1    5250 2800
+	0    1    1    0   
+$EndComp
+$Comp
+L D D7
+U 1 1 5A967C36
+P 5800 2800
+F 0 "D7" H 5800 2900 50  0000 C CNN
+F 1 "D" H 5800 2700 50  0000 C CNN
+F 2 "" H 5800 2800 50  0001 C CNN
+F 3 "" H 5800 2800 50  0001 C CNN
+	1    5800 2800
+	0    1    1    0   
+$EndComp
+$Comp
+L D D3
+U 1 1 5A96826C
+P 4200 4300
+F 0 "D3" H 4200 4400 50  0000 C CNN
+F 1 "D" H 4200 4200 50  0000 C CNN
+F 2 "" H 4200 4300 50  0001 C CNN
+F 3 "" H 4200 4300 50  0001 C CNN
+	1    4200 4300
+	0    1    1    0   
+$EndComp
+$Comp
+L D D5
+U 1 1 5A968272
+P 4700 4300
+F 0 "D5" H 4700 4400 50  0000 C CNN
+F 1 "D" H 4700 4200 50  0000 C CNN
+F 2 "" H 4700 4300 50  0001 C CNN
+F 3 "" H 4700 4300 50  0001 C CNN
+	1    4700 4300
+	0    1    1    0   
+$EndComp
+$Comp
+L D D7
+U 1 1 5A968278
+P 5250 4300
+F 0 "D7" H 5250 4400 50  0000 C CNN
+F 1 "D" H 5250 4200 50  0000 C CNN
+F 2 "" H 5250 4300 50  0001 C CNN
+F 3 "" H 5250 4300 50  0001 C CNN
+	1    5250 4300
+	0    1    1    0   
+$EndComp
+$Comp
+L D D9
+U 1 1 5A96827E
+P 5800 4300
+F 0 "D9" H 5800 4400 50  0000 C CNN
+F 1 "D" H 5800 4200 50  0000 C CNN
+F 2 "" H 5800 4300 50  0001 C CNN
+F 3 "" H 5800 4300 50  0001 C CNN
+	1    5800 4300
+	0    1    1    0   
+$EndComp
+$Comp
+L Conn_01x04_Female J?
+U 1 1 5A968F72
+P 3650 3600
+F 0 "J?" H 3650 3800 50  0000 C CNN
+F 1 "Conn_01x04_Female" H 3650 3300 50  0000 C CNN
+F 2 "" H 3650 3600 50  0001 C CNN
+F 3 "" H 3650 3600 50  0001 C CNN
+	1    3650 3600
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3850 3400 6600 3400
+Wire Wire Line
+	3850 3500 6600 3500
+Wire Wire Line
+	3850 3600 6600 3600
+Wire Wire Line
+	3850 3700 6600 3700
+$Comp
+L GND #PWR?
+U 1 1 5A969107
+P 4200 4600
+F 0 "#PWR?" H 4200 4350 50  0001 C CNN
+F 1 "GND" H 4200 4450 50  0000 C CNN
+F 2 "" H 4200 4600 50  0001 C CNN
+F 3 "" H 4200 4600 50  0001 C CNN
+	1    4200 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5A969134
+P 4700 4600
+F 0 "#PWR?" H 4700 4350 50  0001 C CNN
+F 1 "GND" H 4700 4450 50  0000 C CNN
+F 2 "" H 4700 4600 50  0001 C CNN
+F 3 "" H 4700 4600 50  0001 C CNN
+	1    4700 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5A96915A
+P 5250 4600
+F 0 "#PWR?" H 5250 4350 50  0001 C CNN
+F 1 "GND" H 5250 4450 50  0000 C CNN
+F 2 "" H 5250 4600 50  0001 C CNN
+F 3 "" H 5250 4600 50  0001 C CNN
+	1    5250 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5A969180
+P 5800 4600
+F 0 "#PWR?" H 5800 4350 50  0001 C CNN
+F 1 "GND" H 5800 4450 50  0000 C CNN
+F 2 "" H 5800 4600 50  0001 C CNN
+F 3 "" H 5800 4600 50  0001 C CNN
+	1    5800 4600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5800 4600 5800 4450
+Wire Wire Line
+	5250 4450 5250 4600
+Wire Wire Line
+	4700 4600 4700 4450
+Wire Wire Line
+	4200 4600 4200 4450
+Wire Wire Line
+	4200 2950 4200 4150
+Connection ~ 4200 3400
+Wire Wire Line
+	4700 2950 4700 4150
+Connection ~ 4700 3500
+Wire Wire Line
+	5250 2950 5250 4150
+Connection ~ 5250 3600
+Wire Wire Line
+	5800 2950 5800 4150
+Connection ~ 5800 3700
+Wire Wire Line
+	4200 2650 4200 2450
+Wire Wire Line
+	4200 2450 6650 2450
+Wire Wire Line
+	4700 2650 4700 2450
+Connection ~ 4700 2450
+Wire Wire Line
+	5250 2650 5250 2450
+Connection ~ 5250 2450
+Wire Wire Line
+	5800 2650 5800 2450
+Connection ~ 5800 2450
+Text HLabel 6600 3400 2    60   Input ~ 0
+OUT1
+Text HLabel 6600 3500 2    60   Input ~ 0
+OUT2
+Text HLabel 6600 3600 2    60   Input ~ 0
+OUT4
+Text HLabel 6600 3700 2    60   Input ~ 0
+OUT3
+Text HLabel 6650 2450 2    60   Input ~ 0
+PWRIN
+$EndSCHEMATC

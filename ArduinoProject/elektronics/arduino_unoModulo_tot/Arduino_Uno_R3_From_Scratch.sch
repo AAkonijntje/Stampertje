@@ -33,7 +33,6 @@ LIBS:Arduino_Uno_R3_From_Scratch
 LIBS:MFN_Atmel
 LIBS:MFN_STMicro
 LIBS:Arduino_Uno_R3_From_Scratch-cache
-LIBS:L298_Driver-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -48,18 +47,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Sheet
-S 2050 1400 1500 1500
-U 55CCFEA2
-F0 "Voltage Regulator" 50
-F1 "Voltage_Regulator.sch" 50
-$EndSheet
-$Sheet
-S 3800 1400 1500 1500
-U 55D0D7E6
-F0 "Voltage Management" 50
-F1 "voltage_management.sch" 50
-$EndSheet
 $Sheet
 S 7550 2400 1500 4000
 U 55E94587
@@ -161,9 +148,50 @@ Wire Wire Line
 Wire Wire Line
 	7550 6150 7050 6150
 $Sheet
-S 2100 3500 1450 1200
+S 3850 4950 1450 1200
 U 5A8D7699
 F0 "L298_Driver." 60
 F1 "L298_Driver.sch" 60
+F2 "OUT1" I L 3850 5150 60 
+F3 "OUT2" I L 3850 5250 60 
+F4 "OUT3" I L 3850 5350 60 
+F5 "OUT4" I L 3850 5450 60 
+F6 "PWMB" I R 5300 5650 60 
+F7 "DIRB" I R 5300 5750 60 
+F8 "DIRA" I R 5300 5850 60 
+F9 "PWMA" I R 5300 5550 60 
 $EndSheet
+$Sheet
+S 2100 3450 1400 1200
+U 5A965D0D
+F0 "Power_Input" 60
+F1 "Power_Input.sch" 60
+F2 "PWRIN" I L 2100 4450 60 
+F3 "VIN" I L 2100 4300 60 
+$EndSheet
+$Sheet
+S 2100 4950 1450 1350
+U 5A9679FD
+F0 "Motor_Outputs." 60
+F1 "Motor_Outputs.sch" 60
+F2 "OUT1" I R 3550 5150 60 
+F3 "OUT2" I R 3550 5250 60 
+F4 "OUT4" I R 3550 5350 60 
+F5 "OUT3" I R 3550 5450 60 
+F6 "PWRIN" I L 2100 5200 60 
+$EndSheet
+Wire Wire Line
+	3550 5150 3850 5150
+Wire Wire Line
+	3550 5250 3850 5250
+Wire Wire Line
+	3550 5350 3850 5350
+Wire Wire Line
+	3550 5450 3850 5450
+Wire Wire Line
+	2100 4450 1900 4450
+Wire Wire Line
+	1900 4450 1900 5200
+Wire Wire Line
+	1900 5200 2100 5200
 $EndSCHEMATC
