@@ -1,4 +1,4 @@
-update=Thu 08 Feb 2018 09:17:51 AM CET
+update=Wed 28 Feb 2018 08:58:57 AM CET
 version=1
 last_client=kicad
 [cvpcb]
@@ -82,3 +82,13 @@ LibName30=valves
 LibName31=Arduino_Uno_R3_From_Scratch
 LibName32=MFN_Atmel
 LibName33=MFN_STMicro
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
