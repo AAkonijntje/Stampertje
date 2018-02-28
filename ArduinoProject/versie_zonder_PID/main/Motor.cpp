@@ -53,7 +53,7 @@ void Motor::Stilstand(Motor motorA, Motor motorB){
   analogWrite(motorB.getSpeedPin(),0);
 }
 void Motor::Bijsturen(Motor motorA, Motor motorB, int hoek){
-  int snelheid =55;
+  int snelheid =60;
       int a= snelheid+hoek/2;  
       int b= snelheid-hoek/2;  
       digitalWrite(motorA.getDirectionPin(), HIGH  );
@@ -68,8 +68,8 @@ void Motor::Bijsturen(Motor motorA, Motor motorB, int hoek){
 //############################### Berekening Hoek #####################
 int Motor::Hoekberekenen(int si1, int si2){
 //si1 is sensor op de rand (800-500),si2 is sensor op het zwart 600+, wit is 500-
-  int wit=250;
-  int zwart=500;
+  int wit=300;
+  int zwart=800;
 //sensor wijkt meer en meer af naar links  
   if ((si1>zwart)&&(si2>zwart)){//sensor zit volledig in het zwart
     Serial.println("  geval:twee keer ZWART");
