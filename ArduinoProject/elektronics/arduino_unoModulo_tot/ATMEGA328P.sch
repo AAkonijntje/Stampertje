@@ -37,7 +37,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 6
+Sheet 6 6
 Title "Arduino UNO R3 Clone"
 Date "8 oct 2015"
 Rev "0"
@@ -119,17 +119,17 @@ Wire Wire Line
 Wire Wire Line
 	8250 5900 9350 5900
 Text HLabel 9350 3250 2    40   Input ~ 0
-ARD_AN5/SCL
+AD5
 Text HLabel 9350 3450 2    40   Input ~ 0
-ARD_AN4/SDA
+AD4
 Text HLabel 9350 3650 2    40   Input ~ 0
-ARD_AN3
+AD3
 Text HLabel 9350 3850 2    40   Input ~ 0
-ARD_AN2
+AD2
 Text HLabel 9350 4050 2    40   Input ~ 0
-ARD_AN1
+AD1
 Text HLabel 9350 4250 2    40   Input ~ 0
-ARD_AN0
+AD0
 Wire Wire Line
 	9350 3250 8250 3250
 Wire Wire Line
@@ -143,21 +143,21 @@ Wire Wire Line
 Wire Wire Line
 	8250 4250 9350 4250
 Text HLabel 9350 4700 2    40   Input ~ 0
-ARD_DIG7
+IO7
 Text HLabel 9350 4900 2    40   Input ~ 0
-ARD_DIG6
+IO6
 Text HLabel 9350 5100 2    40   Input ~ 0
-ARD_DIG5
+IO5
 Text HLabel 9350 5300 2    40   Input ~ 0
-ARD_DIG4
+IO4
 Text HLabel 9350 5500 2    40   Input ~ 0
-ARD_DIG3
+PWMA
 Text HLabel 9350 5700 2    40   Input ~ 0
-ARD_DIG2
+IO2
 Text HLabel 9350 5900 2    40   Input ~ 0
-ARD_DIG1
+IO1
 Text HLabel 9350 6100 2    40   Input ~ 0
-ARD_DIG0
+IO0
 Wire Wire Line
 	8250 5700 9350 5700
 Wire Wire Line
@@ -171,17 +171,17 @@ Wire Wire Line
 Wire Wire Line
 	9350 4700 8250 4700
 Text HLabel 9350 2500 2    40   Input ~ 0
-ARD_DIG8
+IO8
 Text HLabel 9350 2300 2    40   Input ~ 0
-ARD_DIG9
+IO9
 Text HLabel 9350 2100 2    40   Input ~ 0
-ARD_DIG10/SPI_SS
+SS
 Text HLabel 9350 1900 2    40   Input ~ 0
-ARD_DIG11/SPI_MOSI
+PWMB
 Text HLabel 9350 1700 2    40   Input ~ 0
-ARD_DIG12/SPI_MISO
+DIRA
 Text HLabel 9350 1500 2    40   Input ~ 0
-ARD_DIG13/SPI_SCK
+DIRB
 Wire Wire Line
 	9350 2500 8250 2500
 Wire Wire Line
@@ -195,7 +195,7 @@ Wire Wire Line
 Wire Wire Line
 	8250 1500 9350 1500
 Text HLabel 9350 750  2    40   Input ~ 0
-328P_RESET
+RESET
 Wire Wire Line
 	3200 1500 5850 1500
 $Comp
@@ -381,11 +381,11 @@ Wire Wire Line
 Text Notes 6150 1050 0    40   ~ 0
 Atmel Appnote: AVR042 - AVR Hardware Design Considerations\nhttp://www.atmel.com/Images/Atmel-2521-AVR-Hardware-Design-Considerations_ApplicationNote_AVR042.pdf\n\nRefer to this for PCB layout information
 $Comp
-L C C14
+L C C4
 U 1 1 56159BB8
 P 5100 4150
-F 0 "C14" H 5150 4250 40  0000 L CNN
-F 1 "0.1 uF" H 5150 4050 40  0000 L CNN
+F 0 "C4" H 5150 4250 40  0000 L CNN
+F 1 "100 nF" H 5150 4050 40  0000 L CNN
 F 2 "" H 5138 4000 30  0001 C CNN
 F 3 "http://images.ihscontent.net/vipimages/VipMasterIC/IC/KEME/KEMES10043/KEMES10043-1.pdf" H 5100 4150 60  0001 C CNN
 F 4 "CAPACITOR, CERAMIC, MULTILAYER, 100 V, X7R, 0.1 uF, SURFACE MOUNT, 0805, CHIP, ROHS COMPLIANT" H 5100 4150 60  0001 C CNN "Characteristics"

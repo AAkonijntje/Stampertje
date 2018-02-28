@@ -241,7 +241,7 @@ $EndComp
 Wire Wire Line
 	2900 2600 3050 2600
 Wire Wire Line
-	4950 3000 4150 3000
+	4075 3000 4950 3000
 Wire Wire Line
 	4150 3000 4150 3500
 $Comp
@@ -306,9 +306,9 @@ Text HLabel 4800 2800 0    60   Input ~ 0
 OUT1
 Text HLabel 4800 2900 0    60   Input ~ 0
 OUT2
-Text HLabel 6800 2800 2    60   Input ~ 0
-OUT3
 Text HLabel 6800 2900 2    60   Input ~ 0
+OUT3
+Text HLabel 6800 2800 2    60   Input ~ 0
 OUT4
 Text HLabel 6800 3100 2    60   Input ~ 0
 PWMB
@@ -316,7 +316,7 @@ Text HLabel 8450 3000 2    60   Input ~ 0
 DIRB
 Text HLabel 2850 3300 0    60   Input ~ 0
 DIRA
-Text HLabel 4800 3200 0    60   Input ~ 0
+Text HLabel 4800 3100 0    60   Input ~ 0
 DIRA
 Wire Wire Line
 	6650 3200 6800 3200
@@ -324,8 +324,11 @@ Text HLabel 6800 3200 2    60   Input ~ 0
 DIRB
 Wire Wire Line
 	4950 3100 4800 3100
-Text HLabel 4800 3100 0    60   Input ~ 0
+Text HLabel 4800 3200 0    60   Input ~ 0
 PWMA
 Wire Wire Line
 	7300 3000 6650 3000
+Connection ~ 4150 3000
+Text HLabel 4075 3000 0    60   Input ~ 0
+PWRIN
 $EndSCHEMATC
