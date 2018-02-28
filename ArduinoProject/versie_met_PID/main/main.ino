@@ -11,7 +11,7 @@ int Z_sens=0;
 Motor motor;
 
 //PID waarden
-const int div_val = 40;
+const int div_val = 50;
 int Z_ref, W_ref;
 PID steeringPID;
 
@@ -21,7 +21,7 @@ const long interval = 1000;
 unsigned long previousMillis = 0;
 int counter = 5;
 int ledState = LOW; 
-int ledpin = 1;
+int ledpin = 5;
 
 
 void setup() {
@@ -31,9 +31,6 @@ void setup() {
 
   pinMode(ledpin, OUTPUT);//blinky LED
 
-  //setup motor
-  motor = Motor(80);
-  
   //setup sturingPID
   searchStartPos = true;
   steeringPID = PID(2, 1, 1);
@@ -44,8 +41,19 @@ void loop() {
   if (searchStartPos){
     W_ref = int(analogRead(A0)/div_val);
     Z_ref = int(analogRead(A1)/div_val);
-    if (W_ref > 2*Z_ref){
+
+
+  Serial.print("witte sensor: ");
+  Serial.println(W_ref);
+
+  Serial.print("zwarte sensor: ");
+  Serial.println(Z_ref);
+    
+    if (W_ref < 2*Z_ref){
       blinkLed();
+    } else {
+      counter = 5;  
+      digitalWrite(ledpin, LOW);
     }
   } else {
     W_sens=int(analogRead(A0)/div_val);//Wit
@@ -61,6 +69,9 @@ void blinkLed() {
     unsigned long currentMillis = millis();
     if (currentMillis - previousMillis >= interval) {
       counter--;
+
+Serial.println(counter);
+      
       previousMillis = currentMillis;
   
       if (ledState == LOW) {
@@ -73,6 +84,8 @@ void blinkLed() {
 
     if (counter == 0) {
       searchStartPos = false;
+      //setup motor
+      motor = Motor(80);
     }
 }
 

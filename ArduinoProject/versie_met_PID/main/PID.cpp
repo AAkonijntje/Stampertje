@@ -25,6 +25,8 @@ int PID::calculatePID(int error){
   D = error-previousError;
   PIDvalue = (Kp*P) + (Ki*I) + (Kd*D);
   previousError = error;
+
+  return PIDvalue / 5;
 }
 
 

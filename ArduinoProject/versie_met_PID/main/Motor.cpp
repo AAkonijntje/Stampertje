@@ -20,13 +20,18 @@ Motor::Motor(int pref_speed){
   pinMode(speed_pin_motor1, OUTPUT);
   pinMode(speed_pin_motor2, OUTPUT);
 
-  digitalWrite(dir_pin_motor1, HIGH);
-  digitalWrite(dir_pin_motor2, LOW);
+  digitalWrite(dir_pin_motor1, LOW);
+  digitalWrite(dir_pin_motor2, HIGH);
+  //eerste snelheid meegeven
+  speed_left_motor = pref_speed;
+  speed_right_motor = pref_speed;
+  analogWrite(speed_pin_motor1, speed_left_motor);
+  analogWrite(speed_pin_motor2, speed_right_motor);
 }
 
 void Motor::rotate(int PIDvalue, int dir){
   speed_left_motor += dir * int(PIDvalue/2);
-  speed_right_motor += dir * int(PIDvalue/2);
+  speed_right_motor -= dir * int(PIDvalue/2);
   alterSpeed();
 };
 
