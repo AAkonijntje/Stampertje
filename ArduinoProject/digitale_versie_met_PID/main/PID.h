@@ -1,5 +1,5 @@
 #ifndef PID_h
-#define motor_h
+#define PID_h
 
 #include "arduino.h"
 
@@ -12,13 +12,13 @@ class PID{
 
   private:
     //PID variabelen
-    int Kp;
-    int Ki;
-    int Kd;
+    int _Kp;
+    int _Ki;
+    int _Kd;
     //PID regeling
-    int P,I,D;
-    int PIDvalue;
-    int previousError;
+    int _P,_I,_D;
+    int _PIDvalue;
+    int _previousError;
     
 };
 

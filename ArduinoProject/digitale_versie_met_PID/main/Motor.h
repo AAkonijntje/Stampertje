@@ -5,9 +5,13 @@
 class Motor{
   public:
          Motor();
-         Motor(int pref_speed);
+         void start(int pref_speed);
          void rotate(int PIDvalue);
   private:
          void alterSpeed();
+        
+         int _pref_speed;
+         int _speed_left_motor;
+         int _speed_right_motor;
 };
 #endif

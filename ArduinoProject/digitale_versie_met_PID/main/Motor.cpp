@@ -6,61 +6,52 @@ const int dir_pin_motorR = 13;
 const int speed_pin_motorL = 3; 
 const int speed_pin_motorR = 11;
 
-int pref_speed;
-int speed_left_motor;
-int speed_right_motor;
+int _pref_speed;
+int _speed_left_motor;
+int _speed_right_motor;
 
-Motor::Motor(){}
-
-Motor::Motor(int speed){
-  pref_speed = speed;
+Motor::Motor(){
   //setup Pinnen
   pinMode(dir_pin_motorL, OUTPUT);
   pinMode(dir_pin_motorR, OUTPUT);
   pinMode(speed_pin_motorL, OUTPUT);
-  pinMode(speed_pin_motorR, OUTPUT);
+  pinMode(speed_pin_motorR, OUTPUT);  
+}
 
+void Motor::start(int pref_speed){
+  _pref_speed = pref_speed;
   digitalWrite(dir_pin_motorL, HIGH);
   digitalWrite(dir_pin_motorR, LOW);
   
   //eerste snelheid meegeven
-  speed_left_motor = pref_speed;
-  speed_right_motor = pref_speed;
+  _speed_left_motor = _pref_speed;
+  _speed_right_motor = _pref_speed;
 }
 
 void Motor::rotate(int PIDvalue){
   //dir = 1 -> draai naar rechts => rechterwiel++ & linkerwiel--
   //dir = -1 -> draai naar links => linkerwiel++ & rechterwiel-- 
   if (abs(PIDvalue)<30){
-    speed_left_motor += (int)(PIDvalue);
-    speed_right_motor -= (int)(PIDvalue);
+    _speed_left_motor += (int)(PIDvalue);
+    _speed_right_motor -= (int)(PIDvalue);
   } 
     
   alterSpeed();
 };
 
 void Motor::alterSpeed(){
-  int change = pref_speed - max(speed_left_motor, speed_right_motor);
-  speed_left_motor += change;
-  speed_right_motor += change;
+  int change = _pref_speed - max(_speed_left_motor, _speed_right_motor);
+  _speed_left_motor += change;
+  _speed_right_motor += change;
 
-  if (speed_left_motor < pref_speed-30){
-    speed_left_motor = pref_speed-30;
-  } else if (speed_right_motor < pref_speed-30) {
-    speed_right_motor = pref_speed-30;
+  if (_speed_left_motor < _pref_speed-40){
+    _speed_left_motor = _pref_speed-40;
+  } else if (_speed_right_motor < _pref_speed-40) {
+    _speed_right_motor = _pref_speed-40;
   }
 
-  analogWrite(speed_pin_motorL, speed_left_motor);
-  analogWrite(speed_pin_motorR, speed_right_motor);
-  
-  Serial.println("/////////////////////////////////////////");
-  Serial.print("speed_left_motor: ");
-  Serial.println(speed_left_motor);
-  Serial.print("speed_right_motor: ");
-  Serial.println(speed_right_motor);
-  Serial.println("/////////////////////////////////////////");
+  analogWrite(speed_pin_motorL, _speed_left_motor);
+  analogWrite(speed_pin_motorR, _speed_right_motor);
 
-  //analogWrite(speed_pin_motorL, 0);
-  //analogWrite(speed_pin_motorR, 0);
 }
 

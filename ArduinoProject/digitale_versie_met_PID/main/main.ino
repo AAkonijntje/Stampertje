@@ -1,92 +1,66 @@
-#include <Servo.h>
 #include "motor.h"
 #include "PID.h"
-//#include <TimerOne.h>
+#include "LED.h"
+#include "SensorModule.h"
 
-//toevoegen van sensorinput
-int W_sens=0;
-int Z_sens=0;
-
-//Motor waarden
 Motor motor;
-
-//PID waarden
-const int div_val = 50;
-int Z_ref, W_ref;
+LED led;
 PID steeringPID;
+SensorModule leftsens;
 
-//search start position: blinkey LED
 boolean searchStartPos;
-const long interval = 1000;
-unsigned long previousMillis = 0;
-int counter = 6;
-int ledState = LOW; 
-int ledpin = 5;
 
 
 void setup() {
   Serial.begin(9600);
-  pinMode(A0, INPUT);//wit sensor: links
-  pinMode(A1, INPUT);//zwart senor: rechts
 
-  pinMode(ledpin, OUTPUT);//blinky LED
-
-  //setup sturingPID
+  motor = Motor();
+  led = LED(3);
+  steeringPID = PID(6, 0, 0);
+  leftsens = SensorModule(A0, A1);
   searchStartPos = true;
-  steeringPID = PID(2, 0, 0);
-  
+
+  //initialize and stop interrupts
+  initInterrupts();
 }
 
 void loop() {  
-//test();
-  
   if (searchStartPos){
-    W_ref = int(analogRead(A0)/div_val);
-    Z_ref = int(analogRead(A1)/div_val);
+    int W_ref = int(analogRead(A0)/341);
+    int Z_ref = int(analogRead(A1)/341);
     
-    if (2*W_ref < Z_ref){
-      blinkLed();
+    if (W_ref == 0 and Z_ref == 2){
+      searchStartPos = led.blinkLed(searchStartPos);
     } else {
-      counter = 6;  
-      digitalWrite(ledpin, LOW);
+      led.reinitialize();
     }
   } else {
-    W_sens=int(analogRead(A0)/div_val);
-    Z_sens=int(analogRead(A1)/div_val);
-
-    //Als Z_ref-Z_sens groter is dan nul, moet men naar rechts draaien: dir = +1 en anders naar links: dir = -1
-    int error = max(abs(W_ref - W_sens), abs(Z_ref - Z_sens));
-    int dir = (Z_ref-Z_sens)/abs(Z_ref-Z_sens);
-
-    motor.rotate(steeringPID.calculatePID(error*dir));
-    
+    motor.start(70);
+    sei();//allow interrupts
   }
   
 }
 
-void blinkLed() {
-    unsigned long currentMillis = millis();
-    if (currentMillis - previousMillis >= interval) {
-      counter--;
-
-Serial.println(counter);
-      
-      previousMillis = currentMillis;
+void initInterrupts(){
+  cli();//stop interrupts
   
-      if (ledState == LOW) {
-        ledState = HIGH;
-      } else {
-        ledState = LOW;
-      }
-      digitalWrite(ledpin, ledState);
-    }
-
-    if (counter == 0) {
-      searchStartPos = false;
-      //setup motor
-      motor = Motor(70);
-      digitalWrite(ledpin, HIGH);
-    }
+  //set timer2 interrupt at 8kHz
+  TCCR2A = 0;// set entire TCCR2A register to 0
+  TCCR2B = 0;// same for TCCR2B
+  TCNT2  = 0;//initialize counter value to 0
+  // set compare match register for 8khz increments
+  OCR2A = 249;// = (16*10^6) / (8000*8) - 1 (must be <256)
+  // turn on CTC mode
+  TCCR2A |= (1 << WGM21);
+  // Set CS21 bit for 8 prescaler
+  TCCR2B |= (1 << CS21);   
+  // enable timer compare interrupt
+  TIMSK2 |= (1 << OCIE2A);
 }
+
+ISR(TIMER2_COMPA_vect){//timer1 interrupt 8kHz
+    motor.rotate(leftsens.calculatePID(steeringPID));
+}
+
 
 

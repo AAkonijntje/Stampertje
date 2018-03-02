@@ -33,7 +33,7 @@ void setup() {
 
   //setup sturingPID
   searchStartPos = true;
-  steeringPID = PID(2, 0, 0);
+  steeringPID = PID(1, 0, 0);
   
 }
 
@@ -61,7 +61,7 @@ void loop() {
     motor.rotate(steeringPID.calculatePID(error*dir));
     
   }
-  
+  //delay(500);
 }
 
 void blinkLed() {
