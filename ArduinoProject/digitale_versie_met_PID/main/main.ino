@@ -28,7 +28,7 @@ void loop() {
   if (searchStartPos){
     int W_ref = int(analogRead(A0)/341);
     int Z_ref = int(analogRead(A1)/341);
-    
+
     if (W_ref == 0 and Z_ref == 2){
       searchStartPos = led.blinkLed(searchStartPos);
     } else {
@@ -41,6 +41,7 @@ void loop() {
   
 }
 
+//Dit is code om interrupts te initaliseren, weet niet of deze werkt: om dit te controleren test timer_test in deze map!!
 void initInterrupts(){
   cli();//stop interrupts
   

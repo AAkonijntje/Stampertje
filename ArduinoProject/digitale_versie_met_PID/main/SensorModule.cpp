@@ -4,8 +4,8 @@
 
 int _pin_W, _pin_Z;
 const int errorMap[3][3] = {{2,1,0},
-                        {3,0,-1},
-                        {4,4,-3}};
+                           {3,0,-1},
+                           {4,4,-3}}; //zie uitleg doorgestuurd blad op messenger :)
 
 SensorModule::SensorModule(){
 }
