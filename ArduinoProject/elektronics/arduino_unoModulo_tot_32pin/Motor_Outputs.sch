@@ -1,0 +1,244 @@
+EESchema Schematic File Version 2
+LIBS:Arduino_Uno_R3_From_Scratch-rescue
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:Arduino_Uno_R3_From_Scratch
+LIBS:MFN_Atmel
+LIBS:MFN_STMicro
+LIBS:Arduino_Uno_R3_From_Scratch-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 5 6
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L D D501
+U 1 1 5A967A8A
+P 4200 2800
+F 0 "D501" H 4200 2900 50  0000 C CNN
+F 1 "D" H 4200 2700 50  0000 C CNN
+F 2 "Diodes_SMD:D_0805" H 4200 2800 50  0001 C CNN
+F 3 "" H 4200 2800 50  0001 C CNN
+	1    4200 2800
+	0    1    1    0   
+$EndComp
+$Comp
+L D D503
+U 1 1 5A967B82
+P 4700 2800
+F 0 "D503" H 4700 2900 50  0000 C CNN
+F 1 "D" H 4700 2700 50  0000 C CNN
+F 2 "Diodes_SMD:D_0805" H 4700 2800 50  0001 C CNN
+F 3 "" H 4700 2800 50  0001 C CNN
+	1    4700 2800
+	0    1    1    0   
+$EndComp
+$Comp
+L D D505
+U 1 1 5A967BCC
+P 5250 2800
+F 0 "D505" H 5250 2900 50  0000 C CNN
+F 1 "D" H 5250 2700 50  0000 C CNN
+F 2 "Diodes_SMD:D_0805" H 5250 2800 50  0001 C CNN
+F 3 "" H 5250 2800 50  0001 C CNN
+	1    5250 2800
+	0    1    1    0   
+$EndComp
+$Comp
+L D D507
+U 1 1 5A967C36
+P 5800 2800
+F 0 "D507" H 5800 2900 50  0000 C CNN
+F 1 "D" H 5800 2700 50  0000 C CNN
+F 2 "Diodes_SMD:D_0805" H 5800 2800 50  0001 C CNN
+F 3 "" H 5800 2800 50  0001 C CNN
+	1    5800 2800
+	0    1    1    0   
+$EndComp
+$Comp
+L D D502
+U 1 1 5A96826C
+P 4200 4300
+F 0 "D502" H 4200 4400 50  0000 C CNN
+F 1 "D" H 4200 4200 50  0000 C CNN
+F 2 "Diodes_SMD:D_0805" H 4200 4300 50  0001 C CNN
+F 3 "" H 4200 4300 50  0001 C CNN
+	1    4200 4300
+	0    1    1    0   
+$EndComp
+$Comp
+L D D504
+U 1 1 5A968272
+P 4700 4300
+F 0 "D504" H 4700 4400 50  0000 C CNN
+F 1 "D" H 4700 4200 50  0000 C CNN
+F 2 "Diodes_SMD:D_0805" H 4700 4300 50  0001 C CNN
+F 3 "" H 4700 4300 50  0001 C CNN
+	1    4700 4300
+	0    1    1    0   
+$EndComp
+$Comp
+L D D506
+U 1 1 5A968278
+P 5250 4300
+F 0 "D506" H 5250 4400 50  0000 C CNN
+F 1 "D" H 5250 4200 50  0000 C CNN
+F 2 "Diodes_SMD:D_0805" H 5250 4300 50  0001 C CNN
+F 3 "" H 5250 4300 50  0001 C CNN
+	1    5250 4300
+	0    1    1    0   
+$EndComp
+$Comp
+L D D508
+U 1 1 5A96827E
+P 5800 4300
+F 0 "D508" H 5800 4400 50  0000 C CNN
+F 1 "D" H 5800 4200 50  0000 C CNN
+F 2 "Diodes_SMD:D_0805" H 5800 4300 50  0001 C CNN
+F 3 "" H 5800 4300 50  0001 C CNN
+	1    5800 4300
+	0    1    1    0   
+$EndComp
+$Comp
+L Conn_01x04_Female J501
+U 1 1 5A968F72
+P 3650 3600
+F 0 "J501" H 3650 3800 50  0000 C CNN
+F 1 "Conn_01x04_Female" H 3650 3300 50  0000 C CNN
+F 2 "Socket_Strips:Socket_Strip_Angled_1x04_Pitch2.00mm" H 3650 3600 50  0001 C CNN
+F 3 "" H 3650 3600 50  0001 C CNN
+	1    3650 3600
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3850 3400 6600 3400
+Wire Wire Line
+	3850 3500 6600 3500
+Wire Wire Line
+	3850 3600 6600 3600
+Wire Wire Line
+	3850 3700 6600 3700
+$Comp
+L GND #PWR023
+U 1 1 5A969107
+P 4200 4600
+F 0 "#PWR023" H 4200 4350 50  0001 C CNN
+F 1 "GND" H 4200 4450 50  0000 C CNN
+F 2 "" H 4200 4600 50  0001 C CNN
+F 3 "" H 4200 4600 50  0001 C CNN
+	1    4200 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR024
+U 1 1 5A969134
+P 4700 4600
+F 0 "#PWR024" H 4700 4350 50  0001 C CNN
+F 1 "GND" H 4700 4450 50  0000 C CNN
+F 2 "" H 4700 4600 50  0001 C CNN
+F 3 "" H 4700 4600 50  0001 C CNN
+	1    4700 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR025
+U 1 1 5A96915A
+P 5250 4600
+F 0 "#PWR025" H 5250 4350 50  0001 C CNN
+F 1 "GND" H 5250 4450 50  0000 C CNN
+F 2 "" H 5250 4600 50  0001 C CNN
+F 3 "" H 5250 4600 50  0001 C CNN
+	1    5250 4600
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR026
+U 1 1 5A969180
+P 5800 4600
+F 0 "#PWR026" H 5800 4350 50  0001 C CNN
+F 1 "GND" H 5800 4450 50  0000 C CNN
+F 2 "" H 5800 4600 50  0001 C CNN
+F 3 "" H 5800 4600 50  0001 C CNN
+	1    5800 4600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5800 4600 5800 4450
+Wire Wire Line
+	5250 4450 5250 4600
+Wire Wire Line
+	4700 4600 4700 4450
+Wire Wire Line
+	4200 4600 4200 4450
+Wire Wire Line
+	4200 2950 4200 4150
+Connection ~ 4200 3400
+Wire Wire Line
+	4700 2950 4700 4150
+Connection ~ 4700 3500
+Wire Wire Line
+	5250 2950 5250 4150
+Connection ~ 5250 3600
+Wire Wire Line
+	5800 2950 5800 4150
+Connection ~ 5800 3700
+Wire Wire Line
+	4200 2650 4200 2450
+Wire Wire Line
+	4200 2450 6650 2450
+Wire Wire Line
+	4700 2650 4700 2450
+Connection ~ 4700 2450
+Wire Wire Line
+	5250 2650 5250 2450
+Connection ~ 5250 2450
+Wire Wire Line
+	5800 2650 5800 2450
+Connection ~ 5800 2450
+Text HLabel 6600 3400 2    60   Input ~ 0
+OUT1
+Text HLabel 6600 3500 2    60   Input ~ 0
+OUT2
+Text HLabel 6600 3600 2    60   Input ~ 0
+OUT4
+Text HLabel 6600 3700 2    60   Input ~ 0
+OUT3
+Text HLabel 6650 2450 2    60   Input ~ 0
+PWRIN
+$EndSCHEMATC
