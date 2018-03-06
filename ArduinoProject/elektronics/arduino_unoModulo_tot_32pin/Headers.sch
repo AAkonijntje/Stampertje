@@ -47,33 +47,13 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L CONN_01X06 J203
-U 1 1 55E94764
-P 6250 4650
-F 0 "J203" H 6400 4525 60  0000 L CNN
-F 1 "AD" H 6400 4650 60  0000 L CNN
-F 2 "Socket_Strips:Socket_Strip_Straight_1x08_Pitch2.00mm" H 6250 4650 60  0001 C CNN
-F 3 "http://sullinscorp.com/catalogs/101_PAGE114-115_.100_FEMALE_HDR.pdf" H 6250 4650 60  0001 C CNN
-F 4 "Connector Header 6 Position 0.100\" (2.54mm) Gold Surface Mount" H 6250 4650 60  0001 C CNN "Characteristics"
-F 5 "Shield Header 6POS - ANLG" H 6250 4650 60  0001 C CNN "Description"
-F 6 "Sullins Connector" H 6250 4650 60  0001 C CNN "MFN"
-F 7 "NPPC061KFXC-RC" H 6250 4650 60  0001 C CNN "MFP"
-F 8 "SMD" H 6250 4650 60  0001 C CNN "Package ID"
-F 9 "ANY" H 6250 4650 60  0001 C CNN "Source"
-F 10 "N" H 6250 4650 60  0001 C CNN "Critical"
-F 11 "Shield_Headers" H 6250 4650 60  0001 C CNN "Subsystem"
-F 12 "~" H 6250 4650 60  0001 C CNN "Notes"
-	1    6250 4650
-	1    0    0    1   
-$EndComp
-Text HLabel 4775 4600 0    40   Input ~ 0
+Text HLabel 4775 4725 0    40   Input ~ 0
 AD3
-Text HLabel 4775 4700 0    40   Input ~ 0
+Text HLabel 4775 4825 0    40   Input ~ 0
 AD2
-Text HLabel 4775 4800 0    40   Input ~ 0
+Text HLabel 4775 4925 0    40   Input ~ 0
 AD1
-Text HLabel 4775 4900 0    40   Input ~ 0
+Text HLabel 4775 5025 0    40   Input ~ 0
 AD0
 Text HLabel 4775 5175 0    40   Input ~ 0
 IO7
@@ -112,13 +92,13 @@ F 12 "~" H 6250 5525 60  0001 C CNN "Notes"
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4775 4900 6050 4900
+	4775 5025 6050 5025
 Wire Wire Line
-	6050 4800 4775 4800
+	6050 4925 4775 4925
 Wire Wire Line
-	4775 4700 6050 4700
+	4775 4825 6050 4825
 Wire Wire Line
-	6050 4600 4775 4600
+	6050 4725 4775 4725
 Wire Wire Line
 	6050 5175 4775 5175
 Wire Wire Line
@@ -135,14 +115,14 @@ Wire Wire Line
 	6050 5775 4775 5775
 Wire Wire Line
 	4775 5875 6050 5875
-Text HLabel 4775 4400 0    40   Input ~ 0
+Text HLabel 4775 4525 0    40   Input ~ 0
 AD5
-Text HLabel 4775 4500 0    40   Input ~ 0
+Text HLabel 4775 4625 0    40   Input ~ 0
 AD4
 Wire Wire Line
-	6050 4400 4775 4400
+	6050 4525 4775 4525
 Wire Wire Line
-	6050 4500 4775 4500
+	6050 4625 4775 4625
 Text HLabel 4775 3475 0    40   Input ~ 0
 AREF
 Text HLabel 4775 3675 0    40   Input ~ 0
@@ -271,4 +251,32 @@ F 3 "" H 2850 1875 50  0001 C CNN
 	1    2850 1875
 	1    0    0    -1  
 $EndComp
+$Comp
+L CONN_01X08 J203
+U 1 1 5A9EE64C
+P 6250 4675
+F 0 "J203" H 6400 4800 60  0000 L CNN
+F 1 "IOL" H 6400 4675 60  0000 L CNN
+F 2 "Socket_Strips:Socket_Strip_Angled_1x08_Pitch2.00mm" H 6250 4675 60  0001 C CNN
+F 3 "http://sullinscorp.com/catalogs/101_PAGE114-115_.100_FEMALE_HDR.pdf" H 6250 4675 60  0001 C CNN
+F 4 "Connector Header 8 Position 0.100\" (2.54mm) Gold Surface Mount" H 6250 4675 60  0001 C CNN "Characteristics"
+F 5 "Shield Header 8POS - DIG01" H 6250 4675 60  0001 C CNN "Description"
+F 6 "Sullins Connector" H 6250 4675 60  0001 C CNN "MFN"
+F 7 "NPPC081KFXC-RC" H 6250 4675 60  0001 C CNN "MFP"
+F 8 "SMD" H 6250 4675 60  0001 C CNN "Package ID"
+F 9 "ANY" H 6250 4675 60  0001 C CNN "Source"
+F 10 "N" H 6250 4675 60  0001 C CNN "Critical"
+F 11 "Shield_Headers" H 6250 4675 60  0001 C CNN "Subsystem"
+F 12 "~" H 6250 4675 60  0001 C CNN "Notes"
+	1    6250 4675
+	1    0    0    -1  
+$EndComp
+Text HLabel 4775 4325 0    40   Input ~ 0
+AD7
+Text HLabel 4775 4425 0    40   Input ~ 0
+AD6
+Wire Wire Line
+	6050 4325 4775 4325
+Wire Wire Line
+	6050 4425 4775 4425
 $EndSCHEMATC

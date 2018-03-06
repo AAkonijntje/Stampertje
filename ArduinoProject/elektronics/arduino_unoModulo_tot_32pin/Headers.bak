@@ -48,12 +48,12 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L CONN_01X06 P3
+L CONN_01X06 J203
 U 1 1 55E94764
 P 6250 4650
-F 0 "P3" H 6400 4525 60  0000 L CNN
+F 0 "J203" H 6400 4525 60  0000 L CNN
 F 1 "AD" H 6400 4650 60  0000 L CNN
-F 2 "Connectors_Phoenix:PhoenixContact_PTSM0,5_6-2,5-V_SMD" H 6250 4650 60  0001 C CNN
+F 2 "Socket_Strips:Socket_Strip_Straight_1x08_Pitch2.00mm" H 6250 4650 60  0001 C CNN
 F 3 "http://sullinscorp.com/catalogs/101_PAGE114-115_.100_FEMALE_HDR.pdf" H 6250 4650 60  0001 C CNN
 F 4 "Connector Header 6 Position 0.100\" (2.54mm) Gold Surface Mount" H 6250 4650 60  0001 C CNN "Characteristics"
 F 5 "Shield Header 6POS - ANLG" H 6250 4650 60  0001 C CNN "Description"
@@ -92,12 +92,12 @@ IO1
 Text HLabel 4775 5875 0    40   Input ~ 0
 IO0
 $Comp
-L CONN_01X08 P4
+L CONN_01X08 J204
 U 1 1 5615BF57
 P 6250 5525
-F 0 "P4" H 6400 5650 60  0000 L CNN
+F 0 "J204" H 6400 5650 60  0000 L CNN
 F 1 "IOL" H 6400 5525 60  0000 L CNN
-F 2 "Diodes_SMD:D_MELF-RM10_Universal_Handsoldering" H 6250 5525 60  0001 C CNN
+F 2 "Socket_Strips:Socket_Strip_Angled_1x08_Pitch2.00mm" H 6250 5525 60  0001 C CNN
 F 3 "http://sullinscorp.com/catalogs/101_PAGE114-115_.100_FEMALE_HDR.pdf" H 6250 5525 60  0001 C CNN
 F 4 "Connector Header 8 Position 0.100\" (2.54mm) Gold Surface Mount" H 6250 5525 60  0001 C CNN "Characteristics"
 F 5 "Shield Header 8POS - DIG01" H 6250 5525 60  0001 C CNN "Description"
@@ -158,12 +158,12 @@ IO9
 Text HLabel 4775 4175 0    40   Input ~ 0
 IO8
 $Comp
-L CONN_01X08 P2
+L CONN_01X08 J202
 U 1 1 5A972E1B
 P 6250 3825
-F 0 "P2" H 6400 3950 60  0000 L CNN
+F 0 "J202" H 6400 3950 60  0000 L CNN
 F 1 "IOL" H 6400 3825 60  0000 L CNN
-F 2 "Diodes_SMD:D_MELF-RM10_Universal_Handsoldering" H 6250 3825 60  0001 C CNN
+F 2 "Socket_Strips:Socket_Strip_Angled_1x08_Pitch2.00mm" H 6250 3825 60  0001 C CNN
 F 3 "http://sullinscorp.com/catalogs/101_PAGE114-115_.100_FEMALE_HDR.pdf" H 6250 3825 60  0001 C CNN
 F 4 "Connector Header 8 Position 0.100\" (2.54mm) Gold Surface Mount" H 6250 3825 60  0001 C CNN "Characteristics"
 F 5 "Shield Header 8POS - DIG01" H 6250 3825 60  0001 C CNN "Description"
@@ -180,7 +180,7 @@ $EndComp
 Wire Wire Line
 	6050 3475 4775 3475
 Wire Wire Line
-	4775 3575 6050 3575
+	4550 3575 6050 3575
 Wire Wire Line
 	6050 3675 4775 3675
 Wire Wire Line
@@ -194,12 +194,12 @@ Wire Wire Line
 Wire Wire Line
 	4775 4175 6050 4175
 $Comp
-L CONN_01X06 P1
+L CONN_01X06 J201
 U 1 1 5A9732C8
 P 2400 1975
-F 0 "P1" H 2550 1850 60  0000 L CNN
+F 0 "J201" H 2550 1850 60  0000 L CNN
 F 1 "POWER" H 2550 1975 60  0000 L CNN
-F 2 "Connectors_Phoenix:PhoenixContact_PTSM0,5_6-2,5-V_SMD" H 2400 1975 60  0001 C CNN
+F 2 "Socket_Strips:Socket_Strip_Angled_1x06_Pitch2.00mm" H 2400 1975 60  0001 C CNN
 F 3 "http://sullinscorp.com/catalogs/101_PAGE114-115_.100_FEMALE_HDR.pdf" H 2400 1975 60  0001 C CNN
 F 4 "Connector Header 6 Position 0.100\" (2.54mm) Gold Surface Mount" H 2400 1975 60  0001 C CNN "Characteristics"
 F 5 "Shield Header 6POS - ANLG" H 2400 1975 60  0001 C CNN "Description"
@@ -249,8 +249,6 @@ Wire Wire Line
 	2650 2175 2650 2325
 Text HLabel 2650 2325 3    60   Input ~ 0
 VIN
-Wire Wire Line
-	4775 3575 4550 3575
 $Comp
 L GND #PWR02
 U 1 1 5A9915EF

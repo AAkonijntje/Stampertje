@@ -233,8 +233,6 @@ Wire Wire Line
 	5325 3375 4400 3375
 Connection ~ 7025 1750
 Wire Wire Line
-	7275 1625 7275 575 
-Wire Wire Line
 	7275 575  5175 575 
 Wire Wire Line
 	5175 575  5175 3250
@@ -260,4 +258,7 @@ Wire Wire Line
 	675  5500 675  2150
 Wire Wire Line
 	675  2150 1200 2150
+Wire Wire Line
+	7275 575  7275 1600
+Connection ~ 7275 1600
 $EndSCHEMATC
