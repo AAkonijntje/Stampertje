@@ -14,12 +14,7 @@ class PID{
     //PID variabelen
     int _Kp;
     int _Ki;
-    int _Kd;
-    //PID regeling
-    int _P,_I,_D;
-    int _PIDvalue;
-    int _previousError;
-    
+    int _Kd;    
 };
 
 #endif

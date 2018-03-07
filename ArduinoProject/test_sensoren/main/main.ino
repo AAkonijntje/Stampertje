@@ -2,7 +2,7 @@ int W_sens=0;
 int Z_sens=0;
 int Z_ref, W_ref;
 
-const int div_val = 50;
+const int div_val = 320;
 
 
 void setup() {

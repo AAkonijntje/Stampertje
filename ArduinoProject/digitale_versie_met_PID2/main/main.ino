@@ -11,7 +11,7 @@ boolean searchStartPos;
 
 void setup() {
   Serial.begin(9600);
-  steeringPID = PID(2,0,0);
+  steeringPID = PID(20,0,0);
   motor = Motor();
   motor.start(70);
   leftsens = SensorModule(A0, A1);

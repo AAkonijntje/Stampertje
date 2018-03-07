@@ -29,10 +29,10 @@ void Motor::start(int pref_speed){
 }
 
 void Motor::rotate(int PIDvalue){
-  if (abs(PIDvalue)<30){
+  //if (abs(PIDvalue)<30){
     _speed_left_motor += (int)(PIDvalue);
     _speed_right_motor -= (int)(PIDvalue);
-  } 
+  //} 
 
   alterSpeed();
 };
@@ -53,10 +53,10 @@ void Motor::alterSpeed(){
   _speed_left_motor += change;
   _speed_right_motor += change;
 
-  if (_speed_left_motor < _pref_speed-25){
-    _speed_left_motor = _pref_speed-25;
-  } else if (_speed_right_motor < _pref_speed-25) {
-    _speed_right_motor = _pref_speed-25;
+  if (_speed_left_motor < _pref_speed-30){
+    _speed_left_motor = _pref_speed-30;
+  } else if (_speed_right_motor < _pref_speed-30) {
+    _speed_right_motor = _pref_speed-30;
   }
   printValues();
 

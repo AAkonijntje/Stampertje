@@ -21,8 +21,8 @@ PID::PID(int Kp, int Ki, int Kd){
 
 int PID::calculatePID(int error){
   _P = error;
-  _I = _I + error;
-  _D = error-_previousError;
+  _I += error;
+  _D = error - _previousError;
   _PIDvalue = (_Kp*_P) + (_Ki*_I) + (_Kd*_D);
   _previousError = error;
 

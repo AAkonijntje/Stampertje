@@ -5,8 +5,8 @@
 int _pin_W, _pin_Z;
 boolean uitBaan = false;
 const int errorMap[3][3] = {{2,1,0},
-                           {3,0,-1},
-                           {4,4,-3}}; //zie uitleg doorgestuurd blad op messenger :)
+                           {3,0,-2},
+                           {4,4,-4}}; //zie uitleg doorgestuurd blad op messenger :)
 
 SensorModule::SensorModule(){
 }
@@ -19,19 +19,21 @@ SensorModule::SensorModule(int pin_W, int pin_Z){
 }
 
 int SensorModule::calculatePID(PID pid){
-    int sens1 = int(analogRead(_pin_W)/320);
-    int sens2 = int(analogRead(_pin_Z)/320);
-    if(sens1 < sens2){
+    //Wit is 0
+    //Zwart is 2
+    int sensW = int(analogRead(_pin_W)/320);
+    int sensZ = int(analogRead(_pin_Z)/320);
+    if(sensW > sensZ){
       //Uit de baan
       uitBaan = true;
-    }else if(sens2==2 and sens1==2 or sens2==2 and sens1==1){
+    }else if(sensW < sensZ or sensW==0){
       uitBaan = false;
     }
 
     if(uitBaan){
-      return pid.calculatePID(5);
+      return pid.calculatePID(4);
     }else{
-      return pid.calculatePID(errorMap[sens1][sens2]);
+      return pid.calculatePID(errorMap[sensW][sensZ]);
     }
 }
 
