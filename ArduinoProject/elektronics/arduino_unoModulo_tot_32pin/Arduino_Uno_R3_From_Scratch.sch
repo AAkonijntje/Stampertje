@@ -32,6 +32,7 @@ LIBS:valves
 LIBS:Arduino_Uno_R3_From_Scratch
 LIBS:MFN_Atmel
 LIBS:MFN_STMicro
+LIBS:degson
 LIBS:Arduino_Uno_R3_From_Scratch-cache
 EELAYER 25 0
 EELAYER END
