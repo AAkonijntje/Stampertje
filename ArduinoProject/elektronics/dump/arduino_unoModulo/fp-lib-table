@@ -1,9 +1,0 @@
-(fp_lib_table
-  (lib (name ATMEGA328P-MMH)(type Legacy)(uri "$(KIPRJMOD)/models/LIB_ATMEGA328P-MMH/ATMEGA328P-MMH/KiCad/ATMEGA328P-MMH.mod")(options "")(descr ""))
-  (lib (name CSTCE16M0V53ZW-R0)(type Legacy)(uri "$(KIPRJMOD)/models/LIB_CSTCE16M0V53ZW-R0/CSTCE16M0V53ZW-R0/KiCad/CSTCE16M0V53ZW-R0.mod")(options "")(descr ""))
-  (lib (name LD1117S50TR)(type Legacy)(uri "$(KIPRJMOD)/models/LIB_LD1117S50TR/LD1117S50TR/KiCad/LD1117S50TR.mod")(options "")(descr ""))
-  (lib (name LP2985-33DBVR)(type Legacy)(uri "$(KIPRJMOD)/models/LIB_LP2985-33DBVR/LP2985-33DBVR/KiCad/LP2985-33DBVR.mod")(options "")(descr ""))
-  (lib (name M20-9980346)(type Legacy)(uri "$(KIPRJMOD)/models/LIB_M20-9980346/M20-9980346/KiCad/M20-9980346.mod")(options "")(descr ""))
-  (lib (name 1N4148W-7-F)(type Legacy)(uri "$(KIPRJMOD)/models/LIB_1N4148W-7-F/1N4148W-7-F/KiCad/1N4148W-7-F.mod")(options "")(descr ""))
-  (lib (name Connectors_Phoenix)(type KiCad)(uri /home/axelwillekens/kicad_sources/Connectors_Phoenix.pretty)(options "")(descr ""))
-)
