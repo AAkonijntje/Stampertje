@@ -13,4 +13,5 @@
   (lib (name M20-9980346)(type Legacy)(uri "$(KIPRJMOD)/models/LIB_M20-9980346/M20-9980346/KiCad/M20-9980346.mod")(options "")(descr ""))
   (lib (name 4-1437565-1)(type Legacy)(uri "$(KIPRJMOD)/models/LIB_4-1437565-1_button/4-1437565-1/KiCad/4-1437565-1.mod")(options "")(descr ""))
   (lib (name L298P)(type Legacy)(uri "$(KIPRJMOD)/models/LIB_L298P/L298P/KiCad/L298P.mod")(options "")(descr ""))
+  (lib (name MyAtmega)(type KiCad)(uri "$(KIPRJMOD)/models/MyAtmega.pretty")(options "")(descr ""))
 )
