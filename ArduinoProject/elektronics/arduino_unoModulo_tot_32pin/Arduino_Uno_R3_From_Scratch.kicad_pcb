@@ -2,7 +2,7 @@
 
   (general
     (links 119)
-    (no_connects 1)
+    (no_connects 0)
     (area 146.185999 91.125523 205.296001 140.678)
     (thickness 1.6)
     (drawings 5)
@@ -15,7 +15,7 @@
   (page A4)
   (layers
     (0 F.Cu signal)
-    (31 B.Cu signal hide)
+    (31 B.Cu signal)
     (32 B.Adhes user)
     (33 F.Adhes user)
     (34 B.Paste user)
@@ -61,7 +61,7 @@
     (pad_size 1.5 1.5)
     (pad_drill 0.6)
     (pad_to_mask_clearance 0)
-    (aux_axis_origin 0 0)
+    (aux_axis_origin 236.152 136.455)
     (grid_origin 166.81 124.771)
     (visible_elements FFFFFF5F)
     (pcbplotparams
@@ -1827,8 +1827,8 @@
   (segment (start 201.354 107.499) (end 199.37 105.515) (width 0.5) (layer F.Cu) (net 2) (tstamp 5AA42B27))
   (segment (start 199.37 105.515) (end 197.749 105.515) (width 0.5) (layer F.Cu) (net 2) (tstamp 5AA42B29))
   (segment (start 183.71 118.053) (end 184.958 118.053) (width 0.25) (layer F.Cu) (net 2))
-  (via (at 188.146 117.405) (size 0.6) (drill 0.4) (layers F.Cu B.Cu) (net 2))
-  (segment (start 184.958 118.053) (end 188.146 117.405) (width 0.35) (layer F.Cu) (net 2) (tstamp 5AA426C6))
+  (via (at 185.86 117.151) (size 0.6) (drill 0.4) (layers F.Cu B.Cu) (net 2))
+  (segment (start 184.958 118.053) (end 185.86 117.151) (width 0.35) (layer F.Cu) (net 2) (tstamp 5AA426C6))
   (segment (start 195.93 128.524) (end 195.93 131.523) (width 0.5) (layer F.Cu) (net 2))
   (segment (start 195.93 131.523) (end 196.036 131.629) (width 0.25) (layer F.Cu) (net 2) (tstamp 5AA425F6))
   (segment (start 178.478 135.947) (end 180.78 135.947) (width 0.35) (layer F.Cu) (net 2))
