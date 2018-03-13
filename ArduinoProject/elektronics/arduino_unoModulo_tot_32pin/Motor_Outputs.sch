@@ -224,9 +224,9 @@ OUT1
 Text HLabel 6600 3500 2    60   Input ~ 0
 OUT2
 Text HLabel 6600 3600 2    60   Input ~ 0
-OUT4
-Text HLabel 6600 3700 2    60   Input ~ 0
 OUT3
+Text HLabel 6600 3700 2    60   Input ~ 0
+OUT4
 Text HLabel 6650 2450 2    60   Input ~ 0
 PWRIN
 Wire Wire Line

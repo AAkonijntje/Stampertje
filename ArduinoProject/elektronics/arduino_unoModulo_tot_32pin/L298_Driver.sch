@@ -209,9 +209,9 @@ OUT1
 Text HLabel 4800 2900 0    60   Input ~ 0
 OUT2
 Text HLabel 6800 2900 2    60   Input ~ 0
-OUT4
-Text HLabel 6800 2800 2    60   Input ~ 0
 OUT3
+Text HLabel 6800 2800 2    60   Input ~ 0
+OUT4
 Text HLabel 6800 3100 2    60   Input ~ 0
 PWMB
 Text HLabel 8450 3000 2    60   Input ~ 0
