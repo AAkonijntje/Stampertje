@@ -48,12 +48,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Wire Wire Line
-	5650 2050 5650 2400
-Connection ~ 5650 2050
-Wire Wire Line
-	5650 2700 5650 3050
-Connection ~ 5650 3050
 Text HLabel 4150 3750 0    40   Input ~ 0
 AREF
 Wire Wire Line
@@ -260,38 +254,14 @@ Wire Wire Line
 Connection ~ 5650 1500
 Wire Wire Line
 	3200 950  3200 1500
-$Comp
-L CERAMIC_RESONATOR X601
-U 1 1 5614A1DB
-P 5250 2550
-F 0 "X601" V 5325 2450 50  0000 R CNN
-F 1 "CSTCE16MOV53-R0" V 5175 2450 40  0000 R CNN
-F 2 "CSTCE16M0V53ZW-R0:CSTE_G_A" H 5250 2550 60  0000 C CNN
-F 3 "http://www.murata.com/~/media/webrenewal/support/library/catalog/products/timingdevice/ceralock/p16e.ashx" H 5250 2550 60  0001 C CNN
-F 4 "CER RESONATOR 16.0MHZ SMD" H 5250 2550 60  0001 C CNN "Characteristics"
-F 5 "ATMEGA328P Oscillator" H 5250 2550 60  0001 C CNN "Description"
-F 6 "Murata" H 5250 2550 60  0001 C CNN "MFN"
-F 7 "CSTCE16M0V53-R0" H 5250 2550 60  0001 C CNN "MFP"
-F 8 "SMD" H 5250 2550 60  0001 C CNN "Package ID"
-F 9 "ANY" H 5250 2550 60  0001 C CNN "Source"
-F 10 "Y" H 5250 2550 60  0001 C CNN "Critical"
-F 11 "328P_Sub" H 5250 2550 60  0001 C CNN "Subsystem"
-F 12 "~" H 5250 2550 60  0001 C CNN "Notes"
-	1    5250 2550
-	0    1    1    0   
-$EndComp
 Wire Wire Line
-	5300 2050 5850 2050
+	4625 2050 5850 2050
 Wire Wire Line
-	5300 2050 5300 2150
+	5300 2050 5300 2425
 Wire Wire Line
-	5300 2950 5300 3050
+	5300 2725 5300 3050
 Wire Wire Line
-	5300 3050 5850 3050
-Wire Wire Line
-	5050 2550 4750 2550
-Wire Wire Line
-	4750 2550 4750 2900
+	4600 3050 5850 3050
 Text Notes 6150 1050 0    40   ~ 0
 Atmel Appnote: AVR042 - AVR Hardware Design Considerations\nhttp://www.atmel.com/Images/Atmel-2521-AVR-Hardware-Design-Considerations_ApplicationNote_AVR042.pdf\n\nRefer to this for PCB layout information
 $Comp
@@ -354,26 +324,6 @@ F 12 "~" H 4900 1200 60  0001 C CNN "Notes"
 	1    4900 1200
 	-1   0    0    1   
 $EndComp
-$Comp
-L R R602
-U 1 1 5615BCD3
-P 5650 2550
-F 0 "R602" H 5725 2500 40  0000 L CNN
-F 1 "1M" V 5650 2550 40  0000 C CNN
-F 2 "Resistors_SMD:R_0805" V 5580 2550 30  0001 C CNN
-F 3 "http://www.vishay.com/docs/20035/dcrcwe3.pdf" H 5650 2550 30  0001 C CNN
-F 4 "RES SMD 1M OHM 1% 1/8W 0805" H 5650 2550 60  0001 C CNN "Characteristics"
-F 5 "ATMEGA328P Xtal 1M Feedback Resistor" H 5650 2550 60  0001 C CNN "Description"
-F 6 "Vishay" H 5650 2550 60  0001 C CNN "MFN"
-F 7 "CRCW08051M00FKEA" H 5650 2550 60  0001 C CNN "MFP"
-F 8 "SMD_0805" H 5650 2550 60  0001 C CNN "Package ID"
-F 9 "ANY" H 5650 2550 60  0001 C CNN "Source"
-F 10 "N" H 5650 2550 60  0001 C CNN "Critical"
-F 11 "328P_Sub" H 5650 2550 60  0001 C CNN "Subsystem"
-F 12 "~" H 5650 2550 60  0001 C CNN "Notes"
-	1    5650 2550
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	3500 1650 3500 1775
 Wire Wire Line
@@ -398,20 +348,6 @@ F 4 "ANY" H 4450 4550 60  0001 C CNN "Source"
 F 5 "N" H 4450 4550 60  0001 C CNN "Critical"
 F 6 "~" H 4450 4550 60  0001 C CNN "Notes"
 	1    4450 4550
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR029
-U 1 1 56207870
-P 4750 2900
-F 0 "#PWR029" H 4750 2900 30  0001 C CNN
-F 1 "GND" H 4750 2830 30  0001 C CNN
-F 2 "~" H 4750 2900 60  0000 C CNN
-F 3 "~" H 4750 2900 60  0000 C CNN
-F 4 "ANY" H 4750 2900 60  0001 C CNN "Source"
-F 5 "N" H 4750 2900 60  0001 C CNN "Critical"
-F 6 "~" H 4750 2900 60  0001 C CNN "Notes"
-	1    4750 2900
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -518,4 +454,65 @@ Text HLabel 5150 5850 0    60   Input ~ 0
 AD6
 Text HLabel 5150 5700 0    60   Input ~ 0
 AD7
+$Comp
+L Crystal Y601
+U 1 1 5AA8FA43
+P 5300 2575
+F 0 "Y601" H 5300 2725 50  0000 C CNN
+F 1 "Crystal" H 5300 2425 50  0000 C CNN
+F 2 "" H 5300 2575 50  0001 C CNN
+F 3 "" H 5300 2575 50  0001 C CNN
+	1    5300 2575
+	0    1    1    0   
+$EndComp
+Connection ~ 5300 2050
+$Comp
+L C C603
+U 1 1 5AA8FDA4
+P 4475 2050
+F 0 "C603" H 4500 2150 50  0000 L CNN
+F 1 "22p" H 4500 1950 50  0000 L CNN
+F 2 "" H 4513 1900 50  0001 C CNN
+F 3 "" H 4475 2050 50  0001 C CNN
+	1    4475 2050
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4325 2050 4325 2250
+$Comp
+L GND #PWR?
+U 1 1 5AA8FEAC
+P 4325 2250
+F 0 "#PWR?" H 4325 2000 50  0001 C CNN
+F 1 "GND" H 4325 2100 50  0000 C CNN
+F 2 "" H 4325 2250 50  0001 C CNN
+F 3 "" H 4325 2250 50  0001 C CNN
+	1    4325 2250
+	1    0    0    -1  
+$EndComp
+Connection ~ 5300 3050
+$Comp
+L C C604
+U 1 1 5AA8FFE3
+P 4450 3050
+F 0 "C604" H 4475 3150 50  0000 L CNN
+F 1 "22p" H 4475 2950 50  0000 L CNN
+F 2 "" H 4488 2900 50  0001 C CNN
+F 3 "" H 4450 3050 50  0001 C CNN
+	1    4450 3050
+	0    -1   -1   0   
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5AA90121
+P 4300 3150
+F 0 "#PWR?" H 4300 2900 50  0001 C CNN
+F 1 "GND" H 4300 3000 50  0000 C CNN
+F 2 "" H 4300 3150 50  0001 C CNN
+F 3 "" H 4300 3150 50  0001 C CNN
+	1    4300 3150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4300 3050 4300 3150
 $EndSCHEMATC
