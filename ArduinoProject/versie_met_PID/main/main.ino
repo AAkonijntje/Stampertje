@@ -38,13 +38,12 @@ void setup() {
 }
 
 void loop() {  
-//test();
   
   if (searchStartPos){
     W_ref = int(analogRead(A0)/div_val);
     Z_ref = int(analogRead(A1)/div_val);
     
-    if (2*W_ref < Z_ref){
+    if (2*W_ref < Z_ref){//"""""""""""""""""""""""""""""""""""wit en buffersituatie ook mogelijk
       blinkLed();
     } else {
       counter = 6;  
