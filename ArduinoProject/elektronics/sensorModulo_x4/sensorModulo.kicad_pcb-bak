@@ -1,6 +1,3 @@
-<<<<<<< Updated upstream
-(kicad_pcb (version 4) (host kicad "dummy file") )
-=======
 (kicad_pcb (version 4) (host pcbnew 4.0.7-e2-6376~58~ubuntu16.04.1)
 
   (general
@@ -8,7 +5,7 @@
     (no_connects 0)
     (area 109.044761 95.775 151.455002 136.735)
     (thickness 1.6)
-    (drawings 7)
+    (drawings 6)
     (tracks 92)
     (zones 0)
     (modules 13)
@@ -584,9 +581,6 @@
       (net 10 "Net-(R8-Pad2)"))
   )
 
-  (gr_text Sensorx4Module (at 147.574 161.544) (layer F.SilkS)
-    (effects (font (size 1.5 1.5) (thickness 0.3)))
-  )
   (gr_line (start 165.354 97.028) (end 163.83 97.028) (angle 90) (layer Edge.Cuts) (width 0.15))
   (gr_line (start 165.354 177.038) (end 165.354 97.028) (angle 90) (layer Edge.Cuts) (width 0.15))
   (gr_line (start 131.064 177.038) (end 165.354 177.038) (angle 90) (layer Edge.Cuts) (width 0.15))
@@ -688,4 +682,3 @@
   (segment (start 152.146 143.256) (end 148.61 139.72) (width 1.016) (layer B.Cu) (net 10) (tstamp 5AAA56F6))
 
 )
->>>>>>> Stashed changes

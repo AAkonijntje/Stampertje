@@ -262,7 +262,7 @@ U 1 1 5AA00219
 P 1550 5275
 F 0 "J1" H 1550 5575 50  0000 C CNN
 F 1 "Conn_01x06_Female" H 1550 4875 50  0000 C CNN
-F 2 "Socket_Strips:Socket_Strip_Straight_1x06_Pitch2.00mm" H 1550 5275 50  0001 C CNN
+F 2 "Socket_Strips:Socket_Strip_Straight_1x06_Pitch2.54mm" H 1550 5275 50  0001 C CNN
 F 3 "" H 1550 5275 50  0001 C CNN
 	1    1550 5275
 	-1   0    0    1   
