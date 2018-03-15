@@ -4,10 +4,7 @@
 
 int _pin_0, _pin_1,_pin_2, _pin_3;
 boolean uitBaan = false;
-const int errorMap[4][2] = {{2,1},
-                           {3,0},
-                           {4,4},
-                           {3,0}}; //zie uitleg doorgestuurd blad op messenger :)
+const int errorMap[11] = {-1,1,2,3,4,5,6,7,8,9,10};
 
 SensorModule::SensorModule(){
 }
@@ -24,26 +21,48 @@ SensorModule::SensorModule(int pin_0, int pin_1,int pin_2, int pin_3){
 }
 
 int SensorModule::calculatePID(PID pid){
-    //Wit is 0
-    //Zwart is 2
-    int sensW = int(analogRead(_pin_W)/500);
-    int sensZ = int(analogRead(_pin_Z)/500);
-    if(sensW > sensZ){
-      //Uit de baan
-      uitBaan = true;
-    }else if(sensW < sensZ or sensW==0){
-      uitBaan = false;
-    }
+  int sens1 = int(analogRead(_pin_0));
+  int sens2 = int(analogRead(_pin_1));
+  int sens3 = int(analogRead(_pin_2));
+  int sens4 = int(analogRead(_pin_3));
 
-    if(uitBaan){
-      return pid.calculatePID(4);
-    }else{
-      return pid.calculatePID(errorMap[sensW][sensZ]);
-    }
+  int temp=0;
+
+  if ((sens1>500)&&(sens2>500)&&(sens3>500)&&(sens4>500)){
+    return errorMap[1];
+  } else if (sens4<500){
+      if(sens3>500){
+        temp= errorMap[11];
+      } else if (sens2>500){
+        temp= errorMap[10];
+      } else if (sens1>500){
+        temp= errorMap[9];
+      } else if (sens1<500) {
+        temp= errorMap[8];
+      }
+  } else if (sens3 <500){
+    if (sens2>500){
+        temp= errorMap[7];
+      } else if (sens1>500){
+        temp= errorMap[6];
+      } else if (sens1<500) {
+        temp= errorMap[5];
+      }
+  } else if (sens2 <500){
+    if (sens1>500){
+        temp= errorMap[4];
+      } else if (sens1<500){
+        temp= errorMap[3];
+      }
+  } else if (sens1 <500){
+    temp= errorMap[2];
+  } 
+
+ return pid.calculatePID(2);
 }
 
 void SensorModule::printValues(PID pid){
-  Serial.print(int(analogRead(_pin_W)/320));
+/*  Serial.print(int(analogRead(_pin_W)/320));
   Serial.print('\n');
   Serial.print(int(analogRead(_pin_Z)/320));
   Serial.print('\n');
@@ -54,5 +73,5 @@ void SensorModule::printValues(PID pid){
   String pidstr = "PID: ";
   Serial.print(pidstr);
   Serial.print(calculatePID(pid));
-  Serial.print('\n');
+  Serial.print('\n');*/
 }
