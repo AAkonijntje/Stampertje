@@ -2,27 +2,32 @@
 #include "SensorModule.h"
 #include "PID.h"
 
-int _pin_W, _pin_Z;
+int _pin_0, _pin_1,_pin_2, _pin_3;
 boolean uitBaan = false;
-const int errorMap[3][3] = {{2,1,0},
-                           {3,0,-2},
-                           {4,4,-4}}; //zie uitleg doorgestuurd blad op messenger :)
+const int errorMap[4][2] = {{2,1},
+                           {3,0},
+                           {4,4},
+                           {3,0}}; //zie uitleg doorgestuurd blad op messenger :)
 
 SensorModule::SensorModule(){
 }
 
-SensorModule::SensorModule(int pin_W, int pin_Z){
-   _pin_W = pin_W;
-   _pin_Z = pin_Z;
-   pinMode(pin_W, INPUT);//wit sensor: links
-   pinMode(pin_Z, INPUT);//zwart senor: rechts
+SensorModule::SensorModule(int pin_0, int pin_1,int pin_2, int pin_3){
+   _pin_0 = pin_0;
+   _pin_1 = pin_1;
+   _pin_2 = pin_2;
+   _pin_3 = pin_3;
+   pinMode(pin_0, INPUT);
+   pinMode(pin_1, INPUT);
+   pinMode(pin_2, INPUT);
+   pinMode(pin_3, INPUT);
 }
 
 int SensorModule::calculatePID(PID pid){
     //Wit is 0
     //Zwart is 2
-    int sensW = int(analogRead(_pin_W)/320);
-    int sensZ = int(analogRead(_pin_Z)/320);
+    int sensW = int(analogRead(_pin_W)/500);
+    int sensZ = int(analogRead(_pin_Z)/500);
     if(sensW > sensZ){
       //Uit de baan
       uitBaan = true;

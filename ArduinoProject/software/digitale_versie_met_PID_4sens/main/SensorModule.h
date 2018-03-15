@@ -7,11 +7,10 @@
 class SensorModule{
   public:
 	    SensorModule();
-      SensorModule(int pin_W, int pin_Z);
+      SensorModule(int pin_0, int pin_1,int pin_2, int pin_3);
       int calculatePID(PID pid);
       void printValues(PID pid);
   private:
-      int _W_sens;
-	    int _Z_sens;
+      int _pin_0, _pin_1,_pin_2, _pin_3;
 };
 #endif
