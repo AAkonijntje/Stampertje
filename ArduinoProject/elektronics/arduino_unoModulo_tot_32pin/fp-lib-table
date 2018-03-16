@@ -16,4 +16,5 @@
   (lib (name MyAtmega)(type KiCad)(uri "$(KIPRJMOD)/models/MyAtmega.pretty")(options "")(descr ""))
   (lib (name MCRSD16000F183000RR)(type Legacy)(uri "$(KIPRJMOD)/models/LIB_MCRSD16000F183000RR/MCRSD16000F183000RR/KiCad/MCRSD16000F183000RR.mod")(options "")(descr ""))
   (lib (name PHT6NQ10T_135)(type Legacy)(uri "$(KIPRJMOD)/models/LIB_PHT6NQ10T,135/PHT6NQ10T,135/KiCad/PHT6NQ10T_135.mod")(options "")(descr ""))
+  (lib (name SK25AHM2G)(type Legacy)(uri "$(KIPRJMOD)/models/LIB_SK25AHM2G/SK25AHM2G/KiCad/SK25AHM2G.mod")(options "")(descr ""))
 )
