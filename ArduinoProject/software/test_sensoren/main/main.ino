@@ -1,25 +1,20 @@
-int W_sens=0;
-int Z_sens=0;
-int Z_ref, W_ref;
-
-const int div_val = 320;
-
 
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
   pinMode(A0, INPUT);//wit sensor: links
   pinMode(A1, INPUT);//zwart senor: rechts
+  pinMode(A2, INPUT);//wit sensor: links
+  pinMode(A3, INPUT);//zwart senor: rechts
 }
 
 void loop() {
   // put your main code here, to run repeatedly:
-  W_ref = int(analogRead(A0)/div_val);
-  Z_ref = int(analogRead(A1)/div_val);
-
-  Serial.print("witte sensor: ");
-  Serial.println(W_ref);
-
-  Serial.print("zwarte sensor: ");
-  Serial.println(Z_ref);
+  Serial.print(int(analogRead(A0)));
+  Serial.print("    -    ");
+  Serial.print(int(analogRead(A1)));
+  Serial.print("    -    ");
+  Serial.print(int(analogRead(A2)));
+  Serial.print("    -    ");
+  Serial.print(int(analogRead(A3)));
 }
