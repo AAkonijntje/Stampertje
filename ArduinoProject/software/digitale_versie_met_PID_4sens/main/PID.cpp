@@ -2,29 +2,36 @@
 #include "PID.h"
 
 //PID variabelen
-int _Kp;
-int _Ki;
-int _Kd;
+double _Kp;
+double _Ki;
+double _Kd;
 //PID regeling
-int _P,_I,_D;
+double _P,_I,_D;
 int _PIDvalue = 0;
 int _previousError=0;
 
 PID::PID(){
 }
 
-PID::PID(int Kp, int Ki, int Kd){
+PID::PID(double Kp, double Ki, double Kd){
   _Kp = Kp;
   _Ki = Ki;
   _Kd = Kd;
 }
 
-int PID::calculatePID(int error){
+double PID::calculatePID(double error){
   _P = error;
   _I += error;
-  _D = error - _previousError;
+  _D =  _previousError-error;
   _PIDvalue = (_Kp*_P) + (_Ki*_I) + (_Kd*_D);
   _previousError = error;
+  Serial.print(" PID: ");
+  Serial.print(_PIDvalue);
+  Serial.print("  _P: ");
+  Serial.print(_P);
+  Serial.print("  _D: ");
+  Serial.print(_D);
+  Serial.print('\n');
 
   return _PIDvalue;
 }
