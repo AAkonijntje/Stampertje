@@ -9,7 +9,7 @@ class Motor{
          void rotate(int PIDvalue);
          void printValues();
   private:
-         void alterSpeed();
+         void alterSpeed(int PIDvalue);
         
          int _pref_speed;
          int _speed_left_motor;

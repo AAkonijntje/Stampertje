@@ -8,7 +8,7 @@ int _Kd;
 //PID regeling
 int _P,_I,_D;
 int _PIDvalue = 0;
-int _previousError;
+int _previousError=0;
 
 PID::PID(){
 }
