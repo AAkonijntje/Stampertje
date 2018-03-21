@@ -6,15 +6,15 @@
 class PID{
 	public:
 		PID();
-    PID(int Kp, int Ki, int Kd);
+    PID(double Kp, double Ki, double Kd);
 
-    int calculatePID(int val);
+    double calculatePID(double val);
 
   private:
     //PID variabelen
-    int _Kp;
-    int _Ki;
-    int _Kd;    
+    double _Kp;
+    double _Ki;
+    double _Kd;    
 };
 
 #endif
