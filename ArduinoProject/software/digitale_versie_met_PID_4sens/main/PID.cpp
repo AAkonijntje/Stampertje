@@ -7,7 +7,7 @@ double _Ki;
 double _Kd;
 //PID regeling
 double _P,_I,_D;
-int _PIDvalue = 0;
+double _PIDvalue = 0;
 int _previousError=0;
 
 PID::PID(){
@@ -20,19 +20,25 @@ PID::PID(double Kp, double Ki, double Kd){
 }
 
 double PID::calculatePID(double error){
+
   _P = error;
   _I += error;
-  _D =  _previousError-error;
+  _D =  error-_previousError;
   _PIDvalue = (_Kp*_P) + (_Ki*_I) + (_Kd*_D);
   _previousError = error;
-  Serial.print(" PID: ");
-  Serial.print(_PIDvalue);
-  Serial.print("  _P: ");
+  /*Serial.print(" _kp ");
+  Serial.print(_Kp);
+  Serial.print(" p ");
   Serial.print(_P);
-  Serial.print("  _D: ");
+    Serial.print(" _kd ");
+  Serial.print(_Kd);
+  Serial.print(" D ");
   Serial.print(_D);
-  Serial.print('\n');
-
+  
+  Serial.print(" error ");
+  Serial.print(error);
+  Serial.print(" PID ");
+  Serial.println(_PIDvalue);*/
   return _PIDvalue;
 }
 

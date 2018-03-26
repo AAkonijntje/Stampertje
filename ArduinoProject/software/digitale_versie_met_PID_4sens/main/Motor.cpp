@@ -10,15 +10,7 @@ int _pref_speed;
 int _speed_left_motor;
 int _speed_right_motor;
 int previousPID=0;
-int Interval=25;
 int previousSens4;
-
-unsigned long currentMillis;
-unsigned long previousMillis=0;
-
-
-
-
 
 Motor::Motor(){
   //setup Pinnen
@@ -55,17 +47,16 @@ void Motor::printValues(){
     Serial.print("   ");
     Serial.print(r);
     Serial.print(_speed_right_motor);
-    Serial.print('\n');
-    */
+    Serial.print('\n');*/
+    
 }
 
 void Motor::alterSpeed(int PIDvalue){
 
+  printValues();
 
- printValues();
-
-    analogWrite(speed_pin_motorL, _speed_left_motor);
-    analogWrite(speed_pin_motorR, _speed_right_motor);
+  analogWrite(speed_pin_motorL, _speed_left_motor);
+  analogWrite(speed_pin_motorR, _speed_right_motor);
   
 }
 

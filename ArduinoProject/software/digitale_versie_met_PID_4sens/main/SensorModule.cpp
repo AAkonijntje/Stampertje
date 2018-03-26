@@ -3,15 +3,14 @@
 #include "PID.h"
 
 int _pin_0, _pin_1,_pin_2, _pin_3;
-int grens=350;
+int grens=450;
 int sens1,sens2, sens3,sens4;
 boolean uitBaan = false;
-const double errorMap[5] = {-1,.5,1,1.5,2};
+const double errorMap[5] = {-.75,.75,1,1.5,2.25};
 
-int interval=250;
 
-unsigned long currentmillis;
-unsigned long previousmillis=0;
+
+
 
 SensorModule::SensorModule(){
 }
@@ -37,24 +36,36 @@ SensorModule::SensorModule(int pin_0, int pin_1,int pin_2, int pin_3){
 
   if ((sens1>grens)&&(sens2>grens)&&(sens3>grens)&&(sens4>grens)){
     temp= errorMap[0];
+    //Serial.print("Zwart");
   } else if (sens4<grens){
      temp= errorMap[4];
+     //Serial.print("4");
   } else if (sens3 <grens){
      temp= errorMap[3];
+     //Serial.print("3");
   } else if (sens2 <grens){
-    temp= errorMap[2];
+     temp= errorMap[2];
+     //Serial.print("2");
   } else if (sens1 <grens){
-    temp= errorMap[1];
+     temp= errorMap[1];
+    //Serial.print("1");
   } 
-  Serial.print("Errormap: ");
-  Serial.print(temp);
+  /*Serial.print(" temp:   ");
+  Serial.println(temp);
+  Serial.print(sens1);
+  Serial.print("   ");
+  Serial.print(sens2);
+  Serial.print("   ");
+  Serial.print(sens3);
+  Serial.print("   ");
+  Serial.print(sens4);*/
   return pid.calculatePID(temp);
 }
 
 void SensorModule::printValues(PID pid){
 
     String pidstr = "->  PID ";
-    Serial.print("   ");
+    Serial.print(" ");
    
     Serial.print(pidstr);
     Serial.print('\n');
