@@ -30,7 +30,11 @@ void Motor::start(int pref_speed){
   _speed_right_motor = _pref_speed;
 }
 
-void Motor::rotate(int PIDvalue){
+void Motor::rotate(double PIDvalue,boolean leftright){
+  //Left= true, Right= false
+  if(!leftright){
+    PIDvalue=-1*PIDvalue;
+  };
     _speed_left_motor= _pref_speed+(int)(PIDvalue);
     _speed_right_motor = _pref_speed-(int)(PIDvalue);
 
@@ -42,19 +46,18 @@ void Motor::printValues(){
      
     String l = " linkse motor: ";
     String r = " rechtse motor: ";
-    /*Serial.print(l);
+    Serial.print(l);
     Serial.print(_speed_left_motor);
     Serial.print("   ");
     Serial.print(r);
     Serial.print(_speed_right_motor);
-    Serial.print('\n');*/
+    Serial.print('\n');
     
 }
 
 void Motor::alterSpeed(int PIDvalue){
 
-  printValues();
-
+  //printValues();
   analogWrite(speed_pin_motorL, _speed_left_motor);
   analogWrite(speed_pin_motorR, _speed_right_motor);
   

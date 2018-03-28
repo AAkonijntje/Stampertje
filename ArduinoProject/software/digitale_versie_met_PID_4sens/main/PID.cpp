@@ -8,7 +8,8 @@ double _Kd;
 //PID regeling
 double _P,_I,_D;
 double _PIDvalue = 0;
-int _previousError=0;
+double _previousError=0;
+double diff=0.01;
 
 PID::PID(){
 }
@@ -23,18 +24,21 @@ double PID::calculatePID(double error){
 
   _P = error;
   _I += error;
+  if (error==_previousError){
+    if(_D>0){
+      _D=_D-diff;
+    }else if(_D<0){
+      _D=_D+diff;
+    }
+  }else{
   _D =  error-_previousError;
+  }
   _PIDvalue = (_Kp*_P) + (_Ki*_I) + (_Kd*_D);
+  //Serial.print(" previouserror ");
+  //Serial.print(_previousError);
   _previousError = error;
-  /*Serial.print(" _kp ");
-  Serial.print(_Kp);
-  Serial.print(" p ");
-  Serial.print(_P);
-    Serial.print(" _kd ");
-  Serial.print(_Kd);
-  Serial.print(" D ");
-  Serial.print(_D);
-  
+  /*Serial.print(" D: ");
+  Serial.print(_D);  
   Serial.print(" error ");
   Serial.print(error);
   Serial.print(" PID ");

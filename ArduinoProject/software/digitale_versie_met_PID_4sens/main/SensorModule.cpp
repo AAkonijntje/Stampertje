@@ -6,7 +6,8 @@ int _pin_0, _pin_1,_pin_2, _pin_3;
 int grens=450;
 int sens1,sens2, sens3,sens4;
 boolean uitBaan = false;
-const double errorMap[5] = {-.75,.75,1,1.5,2.25};
+const double errorMap[5] = {-.75,.75,1,1.25,2.25};
+int change;
 
 
 
@@ -26,39 +27,27 @@ SensorModule::SensorModule(int pin_0, int pin_1,int pin_2, int pin_3){
    pinMode(pin_3, INPUT);
 }
 
-  double SensorModule::calculatePIDSituatie(PID pid){
-  int sens1 = int(analogRead(_pin_0));
-  int sens2 = int(analogRead(_pin_1));
-  int sens3 = int(analogRead(_pin_2));
-  int sens4 = int(analogRead(_pin_3));
-
+double SensorModule::calculatePIDSituatie(PID pid){
+  
   double temp=0;
 
-  if ((sens1>grens)&&(sens2>grens)&&(sens3>grens)&&(sens4>grens)){
+  if ((_waarde1>grens)&&(_waarde2>grens)&&(_waarde3>grens)&&(_waarde4>grens)){
     temp= errorMap[0];
     //Serial.print("Zwart");
-  } else if (sens4<grens){
+  } else if (_waarde4<grens){
      temp= errorMap[4];
      //Serial.print("4");
-  } else if (sens3 <grens){
+  } else if (_waarde3 <grens){
      temp= errorMap[3];
      //Serial.print("3");
-  } else if (sens2 <grens){
+  } else if (_waarde2 <grens){
      temp= errorMap[2];
      //Serial.print("2");
-  } else if (sens1 <grens){
+  } else if (_waarde1 <grens){
      temp= errorMap[1];
     //Serial.print("1");
   } 
-  /*Serial.print(" temp:   ");
-  Serial.println(temp);
-  Serial.print(sens1);
-  Serial.print("   ");
-  Serial.print(sens2);
-  Serial.print("   ");
-  Serial.print(sens3);
-  Serial.print("   ");
-  Serial.print(sens4);*/
+
   return pid.calculatePID(temp);
 }
 
@@ -71,3 +60,39 @@ void SensorModule::printValues(PID pid){
     Serial.print('\n');
 
 }
+
+boolean SensorModule::LinksRechts(SensorModule links, SensorModule rechts){
+  //Left= true, Right= false
+  //code voor wissel links en rechtse module
+  if((links._waarde1>grens)&&(links._waarde2>grens)&&(links._waarde3>grens)&&(links._waarde4>grens)&&(rechts._waarde1>grens)&&(rechts._waarde2>grens)&&(rechts._waarde3>grens)&&(rechts._waarde4>grens)){
+    change++;  
+  }
+  Serial.print(change);
+  Serial.print("  ");
+  if(change>3){
+    if(links._waarde1<grens){
+      change=0;
+      return true;      
+    }else if(rechts._waarde1<grens){
+      change=0;
+      return false;      
+    }
+  }
+}
+
+void SensorModule::RefreshValues(SensorModule module){
+  _waarde1=digitalRead(module._pin_0)*900;
+  _waarde2=digitalRead(module._pin_1)*900;
+  _waarde3=analogRead(module._pin_2);
+  _waarde4=analogRead(module._pin_3);
+
+  Serial.print("Waardes   ");
+  Serial.print(_waarde1);
+  Serial.print("   ");
+  Serial.print(_waarde2);
+  Serial.print("   ");
+  Serial.print(_waarde3);
+  Serial.print("   ");
+  Serial.println(_waarde4);
+}
+

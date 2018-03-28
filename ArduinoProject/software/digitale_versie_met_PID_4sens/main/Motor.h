@@ -6,7 +6,7 @@ class Motor{
   public:
          Motor();
          void start(int pref_speed);
-         void rotate(int PIDvalue);
+         void rotate(double PIDvalue,boolean leftright);
          void printValues();
   private:
          void alterSpeed(int PIDvalue);
