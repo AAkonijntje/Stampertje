@@ -101,9 +101,9 @@ Wire Wire Line
 	8250 4250 9350 4250
 Text HLabel 9350 5100 2    40   Input ~ 0
 PWMB
-Text HLabel 9350 4900 2    40   Input ~ 0
-DIRB
 Text HLabel 9350 4700 2    40   Input ~ 0
+DIRB
+Text HLabel 9350 4900 2    40   Input ~ 0
 PWMA
 Text HLabel 9350 5300 2    40   Input ~ 0
 DIRA
