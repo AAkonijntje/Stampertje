@@ -2,13 +2,13 @@
 #include "PID.h"
 #include "SensorModule.h"
 #include <SPI.h>
-#include "MFRC522.h"
 
+/*
 //RFID ctes
 constexpr uint8_t RST_PIN = 7;          // Configurable, see typical pin layout above
 constexpr uint8_t SS_PIN = 10;          // Configurable, see typical pin layout above
-MFRC522 mfrc522(SS_PIN, RST_PIN);  // Create MFRC522 instance
-
+//MFRC522 mfrc522(SS_PIN, RST_PIN);  // Create MFRC522 instance
+*/
 
 //Rijden en sturen ctes
 Motor motor;
@@ -26,13 +26,13 @@ boolean leftright; //Left= true, Right= false
 
 
 void setup() {
-  //RFID ctes
+/*  //RFID ctes
   while (!Serial);    // Do nothing if no serial port is opened (added for Arduinos based on ATMEGA32U4)
   SPI.begin();      // Init SPI bus
   mfrc522.PCD_Init();   // Init MFRC522
   mfrc522.PCD_DumpVersionToSerial();  // Show details of PCD - MFRC522 Card Reader details
   Serial.println(F("Scan PICC to see UID, SAK, type, and data blocks..."));
-  
+  */
   //Rijden en sturen setup
   Serial.begin(250000);
   steeringPID = PID(15,0,12);
@@ -65,7 +65,7 @@ if (currentMillis - previousMillis >= interval){
     motor.rotate(PIDvalue,leftright);
     tijdelijk=0;
  }
- //########################### Lezen RFID ########################
+/* //########################### Lezen RFID ########################
   // Look for new cards
   if ( ! mfrc522.PICC_IsNewCardPresent()) {
     return;
@@ -77,7 +77,7 @@ if (currentMillis - previousMillis >= interval){
   }
 
   // Dump debug info about the card; PICC_HaltA() is automatically called
-  mfrc522.PICC_DumpToSerial(&(mfrc522.uid));
+  mfrc522.PICC_DumpToSerial(&(mfrc522.uid));*/
 }
 
 
