@@ -1,0 +1,15 @@
+#include "Arduino.h"
+#include "SensorModule.h"
+
+int _pin_W;
+int _pin_Z;
+int _W_sens;
+int _Z_sens;
+
+SensorModule(){
+}
+
+SensorModule(pin_W, pin_Z){
+	_pin_W = pin_W;
+	_pin_Z = pin_Z;
+}
