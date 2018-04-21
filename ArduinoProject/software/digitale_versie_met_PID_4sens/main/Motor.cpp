@@ -22,7 +22,7 @@ Motor::Motor(){
 
 void Motor::start(int pref_speed){
   _pref_speed = pref_speed;
-  digitalWrite(dir_pin_motorL, HIGH);
+  digitalWrite(dir_pin_motorL, LOW);
   digitalWrite(dir_pin_motorR, LOW);
   
   //eerste snelheid meegeven

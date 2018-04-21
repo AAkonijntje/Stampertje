@@ -1,8 +1,37 @@
-#include "motor.h"
-#include "PID.h"
-#include "SensorModule.h"
-<<<<<<< HEAD
-//RFID
+/**************************************************************************/
+/*! 
+    This example will attempt to connect to an ISO14443A
+    card or tag and retrieve some basic information about it
+    that can be used to determine what type of card it is.   
+   
+    Note that you need the baud rate to be 115200 because we need to print
+    out the data and read from the card at the same time!
+
+    To enable debug message, define DEBUG in PN532/PN532_debug.h
+    
+*/
+/**************************************************************************/
+
+
+/* When the number after #if set as 1, it will be switch to SPI Mode*/
+#if 0
+  #include <SPI.h>
+  #include <PN532_SPI.h>
+  #include "PN532.h"
+
+  PN532_SPI pn532spi(SPI, 10);
+  PN532 nfc(pn532spi);
+
+/* When the number after #elif set as 1, it will be switch to HSU Mode*/
+#elif 0
+  #include <PN532_HSU.h>
+  #include <PN532.h>
+      
+  PN532_HSU pn532hsu(Serial1);
+  PN532 nfc(pn532hsu);
+
+/* When the number after #if & #elif set as 0, it will be switch to I2C Mode*/
+#else 
   #include <Wire.h>
   #include <PN532_I2C.h>
   #include <PN532.h>
@@ -10,32 +39,12 @@
   
   PN532_I2C pn532i2c(Wire);
   PN532 nfc(pn532i2c);
-=======
-#include <SPI.h>
-
-
->>>>>>> a895c1f4a26c347fce88494c0e0480bbd42e5e13
-
-//Rijden en sturen ctes
-Motor motor;
-SensorModule leftsens;
-SensorModule rightsens;
-PID steeringPID;
-unsigned long tijdelijk=0;
-int interval=500;
-double PIDvalue;
-
-unsigned long currentMillis;
-unsigned long previousMillis=0;
-boolean searchStartPos;
-boolean leftright; //Left= true, Right= false
-
-
-void setup() {
-<<<<<<< HEAD
-  Serial.begin(250000);
-  //RFID
+#endif
   
+void setup(void) {
+  Serial.begin(115200);
+  Serial.println("Hello!");
+
   nfc.begin();
 
   uint32_t versiondata = nfc.getFirmwareVersion();
@@ -43,6 +52,7 @@ void setup() {
     Serial.print("Didn't find PN53x board");
     while (1); // halt
   }
+  
   // Got ok data, print it out!
   Serial.print("Found chip PN5"); Serial.println((versiondata>>24) & 0xFF, HEX); 
   Serial.print("Firmware ver. "); Serial.print((versiondata>>16) & 0xFF, DEC); 
@@ -57,45 +67,10 @@ void setup() {
   nfc.SAMConfig();
     
   Serial.println("Waiting for an ISO14443A card");
-=======
-
->>>>>>> a895c1f4a26c347fce88494c0e0480bbd42e5e13
-  //Rijden en sturen setup
-  
-  steeringPID = PID(15,0,12);
-  motor = Motor();
-  motor.start(60);
-  leftsens = SensorModule(A0, A1, A2, A3);
-  rightsens = SensorModule(8,9,A4,A5);
 }
 
-void loop() {  
-  //########################### Rijden en sturen ########################
- //tijdelijk=tijdelijk +1;
- currentMillis=millis();
-if (currentMillis - previousMillis >= interval){
-    previousMillis=currentMillis;
-
-    leftsens.RefreshValues(leftsens);
-    rightsens.RefreshValues(rightsens);
-    
-    leftright=leftsens.LinksRechts(leftsens,rightsens);
-    Serial.println("left=0/right=1");
-
-    if (leftright){
-      PIDvalue=leftsens.calculatePIDSituatie(steeringPID);
-      Serial.println("Links");
-    }else {
-      PIDvalue=rightsens.calculatePIDSituatie(steeringPID);
-      Serial.println("Rechts");
-
-    }
-    motor.rotate(PIDvalue,leftright);
-    tijdelijk=0;
- }
-<<<<<<< HEAD
- //################RFID##############
- boolean success;
+void loop(void) {
+  boolean success;
   uint8_t uid[] = { 0, 0, 0, 0, 0, 0, 0 };  // Buffer to store the returned UID
   uint8_t uidLength;                        // Length of the UID (4 or 7 bytes depending on ISO14443A card type)
   
@@ -121,9 +96,4 @@ if (currentMillis - previousMillis >= interval){
     // PN532 probably timed out waiting for a card
     Serial.println("Timed out waiting for a card");
   }
-=======
->>>>>>> a895c1f4a26c347fce88494c0e0480bbd42e5e13
 }
-
-
-
