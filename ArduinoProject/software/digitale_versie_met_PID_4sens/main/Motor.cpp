@@ -58,8 +58,8 @@ void Motor::printValues(){
 void Motor::alterSpeed(int PIDvalue){
 
   //printValues();
-  analogWrite(speed_pin_motorL, _speed_left_motor);
-  analogWrite(speed_pin_motorR, _speed_right_motor);
+  //analogWrite(speed_pin_motorL, _speed_left_motor);
+  //analogWrite(speed_pin_motorR, _speed_right_motor);
   
 }
 

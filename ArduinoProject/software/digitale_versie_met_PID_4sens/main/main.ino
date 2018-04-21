@@ -1,15 +1,16 @@
 #include "motor.h"
 #include "PID.h"
 #include "SensorModule.h"
+#include "RFID.h"
 #include <SPI.h>
-
-
+//######################## RFID ##############
 
 //Rijden en sturen ctes
 Motor motor;
 SensorModule leftsens;
 SensorModule rightsens;
 PID steeringPID;
+RFID rfid;
 unsigned long tijdelijk=0;
 int interval=0;
 double PIDvalue;
@@ -20,18 +21,22 @@ boolean searchStartPos;
 boolean leftright; //Left= true, Right= false
 
 
-void setup() {
 
-  //Rijden en sturen setup
-  Serial.begin(250000);
+
+void setup() {
+ //################################### Rijden en sturen setup ###################################
+  Serial.begin(115200);
   steeringPID = PID(15,0,12);
   motor = Motor();
-  motor.start(60);
-  leftsens = SensorModule(A0, A1, A2, A3);
+  motor.start(00);
+  leftsens = SensorModule(4, 5, A2, A3);
   rightsens = SensorModule(8,9,A4,A5);
+  rfid = RFID();
+  rfid.RFIDSetup();
 }
 
-void loop() {  //########################### Rijden en sturen ########################
+void loop() {  
+  //########################### Rijden en sturen ########################
  //tijdelijk=tijdelijk +1;
  currentMillis=millis();
 if (currentMillis - previousMillis >= interval){
@@ -54,6 +59,8 @@ if (currentMillis - previousMillis >= interval){
     motor.rotate(PIDvalue,leftright);
     tijdelijk=0;
  }
+//########################### RFID loop ###########################
+  rfid.RFIDTag();
 }
 
 

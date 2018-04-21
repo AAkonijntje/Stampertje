@@ -9,10 +9,6 @@ boolean uitBaan = false;
 const double errorMap[5] = {-.75,.75,1,1.25,2.25};
 int change;
 
-
-
-
-
 SensorModule::SensorModule(){
 }
 
@@ -83,8 +79,8 @@ boolean SensorModule::LinksRechts(SensorModule links, SensorModule rechts){
 void SensorModule::RefreshValues(SensorModule module){
   _waarde1=digitalRead(module._pin_0)*900;
   _waarde2=digitalRead(module._pin_1)*900;
-  _waarde3=analogRead(module._pin_2);
-  _waarde4=analogRead(module._pin_3);
+  _waarde3=digitalRead(module._pin_2)*900;
+  _waarde4=digitalRead(module._pin_3)*900;
 
   Serial.print("Waardes   ");
   Serial.print(_waarde1);
