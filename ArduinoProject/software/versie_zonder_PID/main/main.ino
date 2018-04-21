@@ -27,20 +27,12 @@ pinMode(A1, INPUT);//rechts senor
 }
 
 void loop() {
-  sensorinput1=analogRead(A0);//L
-  sensorinput2=analogRead(A1);//R
-  Serial.print("L:");
-  Serial.print(sensorinput1);
-  Serial.print("   R:");
-  Serial.print(sensorinput2);
 
-  hoek=motor1.Hoekberekenen(sensorinput1,sensorinput2);
-  Serial.print("Hoek:");
-  Serial.print(hoek);
-  Serial.print(" \n");
 
-  motor1.Bijsturen(motor1, motor2, hoek);
 
-  delay(15);
+  digitalWrite(13, HIGH  );
+  digitalWrite(12, HIGH);
+  analogWrite(11,150);
+  analogWrite(3,150);
 
 }
