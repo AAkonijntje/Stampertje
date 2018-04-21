@@ -1,14 +1,14 @@
 #include "motor.h"
 #include "PID.h"
 #include "SensorModule.h"
-//#include <SPI.h>
-//#include "MFRC522.h"
-
-//RFID ctes
-constexpr uint8_t RST_PIN = 7;          // Configurable, see typical pin layout above
-constexpr uint8_t SS_PIN = 10;          // Configurable, see typical pin layout above
-//MFRC522 mfrc522(SS_PIN, RST_PIN);  // Create MFRC522 instance
-
+//RFID
+  #include <Wire.h>
+  #include <PN532_I2C.h>
+  #include <PN532.h>
+  #include <NfcAdapter.h>
+  
+  PN532_I2C pn532i2c(Wire);
+  PN532 nfc(pn532i2c);
 
 //Rijden en sturen ctes
 Motor motor;
@@ -26,15 +26,32 @@ boolean leftright; //Left= true, Right= false
 
 
 void setup() {
-  /*/RFID ctes
-  while (!Serial);    // Do nothing if no serial port is opened (added for Arduinos based on ATMEGA32U4)
-  SPI.begin();      // Init SPI bus
-  mfrc522.PCD_Init();   // Init MFRC522
-  mfrc522.PCD_DumpVersionToSerial();  // Show details of PCD - MFRC522 Card Reader details
-  Serial.println(F("Scan PICC to see UID, SAK, type, and data blocks..."));
-  */
-  //Rijden en sturen setup
   Serial.begin(250000);
+  //RFID
+  
+  nfc.begin();
+
+  uint32_t versiondata = nfc.getFirmwareVersion();
+  if (! versiondata) {
+    Serial.print("Didn't find PN53x board");
+    while (1); // halt
+  }
+  // Got ok data, print it out!
+  Serial.print("Found chip PN5"); Serial.println((versiondata>>24) & 0xFF, HEX); 
+  Serial.print("Firmware ver. "); Serial.print((versiondata>>16) & 0xFF, DEC); 
+  Serial.print('.'); Serial.println((versiondata>>8) & 0xFF, DEC);
+  
+  // Set the max number of retry attempts to read from a card
+  // This prevents us from waiting forever for a card, which is
+  // the default behaviour of the PN532.
+  nfc.setPassiveActivationRetries(0xFF);
+  
+  // configure board to read RFID tags
+  nfc.SAMConfig();
+    
+  Serial.println("Waiting for an ISO14443A card");
+  //Rijden en sturen setup
+  
   steeringPID = PID(15,0,12);
   motor = Motor();
   motor.start(60);
@@ -42,7 +59,8 @@ void setup() {
   rightsens = SensorModule(8,9,A4,A5);
 }
 
-void loop() {  //########################### Rijden en sturen ########################
+void loop() {  
+  //########################### Rijden en sturen ########################
  //tijdelijk=tijdelijk +1;
  currentMillis=millis();
 if (currentMillis - previousMillis >= interval){
@@ -65,19 +83,33 @@ if (currentMillis - previousMillis >= interval){
     motor.rotate(PIDvalue,leftright);
     tijdelijk=0;
  }
- /*/########################### Lezen RFID ########################
-  // Look for new cards
-  if ( ! mfrc522.PICC_IsNewCardPresent()) {
-    return;
+ //################RFID##############
+ boolean success;
+  uint8_t uid[] = { 0, 0, 0, 0, 0, 0, 0 };  // Buffer to store the returned UID
+  uint8_t uidLength;                        // Length of the UID (4 or 7 bytes depending on ISO14443A card type)
+  
+  // Wait for an ISO14443A type cards (Mifare, etc.).  When one is found
+  // 'uid' will be populated with the UID, and uidLength will indicate
+  // if the uid is 4 bytes (Mifare Classic) or 7 bytes (Mifare Ultralight)
+  success = nfc.readPassiveTargetID(PN532_MIFARE_ISO14443A, &uid[0], &uidLength);
+  
+  if (success) {
+    Serial.println("Found a card!");
+    Serial.print("UID Length: ");Serial.print(uidLength, DEC);Serial.println(" bytes");
+    Serial.print("UID Value: ");
+    for (uint8_t i=0; i < uidLength; i++) 
+    {
+      Serial.print(" 0x");Serial.print(uid[i], HEX); 
+    }
+    Serial.println("");
+    // Wait 1 second before continuing
+    delay(1000);
   }
-
-  // Select one of the cards
-  if ( ! mfrc522.PICC_ReadCardSerial()) {
-    return;
+  else
+  {
+    // PN532 probably timed out waiting for a card
+    Serial.println("Timed out waiting for a card");
   }
-
-  // Dump debug info about the card; PICC_HaltA() is automatically called
-  mfrc522.PICC_DumpToSerial(&(mfrc522.uid));*/
 }
 
 
