@@ -12,7 +12,7 @@ SensorModule rightsens;
 PID steeringPID;
 RFID rfid;
 unsigned long tijdelijk=0;
-int interval=0;
+int interval=500;
 double PIDvalue;
 
 unsigned long currentMillis;

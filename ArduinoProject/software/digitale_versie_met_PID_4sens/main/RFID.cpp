@@ -56,7 +56,7 @@ void RFID::RFIDTag() {
     }
     Serial.println("");
     // Wait 1 second before continuing
-    delay(1000);
+    
   }
   else
   {
