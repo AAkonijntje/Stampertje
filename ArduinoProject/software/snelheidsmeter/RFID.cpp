@@ -8,6 +8,7 @@
 
 PN532_I2C pn532i2c(Wire);
 PN532 nfc(pn532i2c);
+uint8_t _Tag[] = { 0, 0, 0, 0, 0, 0, 0 };
 
 RFID::RFID() {
 }
@@ -47,14 +48,31 @@ void RFID::RFIDTag() {
   success = nfc.readPassiveTargetID(PN532_MIFARE_ISO14443A, &uid[0], &uidLength);
 
   if (success) {
-    Serial.println("Found a card!");
-    /*Serial.print("UID Length: "); Serial.print(uidLength, DEC); Serial.println(" bytes");
-    Serial.print("UID Value: ");
+    /*Serial.println("Found a card!");
+    Serial.print("UID Length: "); Serial.print(uidLength, DEC); Serial.println(" bytes");
+    Serial.print("UID Value: ");*/
     for (uint8_t i = 0; i < uidLength; i++)
     {
       Serial.print(" 0x"); Serial.print(uid[i], HEX);
+      _Tag[i]=uid[i];
+      Serial.println("letter toegevoegd");
+      
     }
-    Serial.println();*/
+    Serial.println();
   }
+  
+}
+
+uint8_t RFID::Tag() {
+  
+  Serial.print(" volledige tag:  ");
+  
+
+  for (uint8_t i = 0; i < 4; i++)
+    {
+     Serial.println(_Tag[i] , HEX);
+      
+    }  
+  return _Tag;
 }
 

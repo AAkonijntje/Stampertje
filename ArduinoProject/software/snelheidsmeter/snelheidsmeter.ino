@@ -1,4 +1,5 @@
 #include <SoftwareSerial.h>
+#include "RFID.h"
 
 #define RX 4
 #define TX 5
@@ -7,23 +8,40 @@ int previousValue;
 int currentValue;
 unsigned long startTime, currentTime;
 const double pi = 3.1415;
-
+RFID rfid;
+uint8_t naamTag[]= { 0, 0, 0, 0, 0, 0, 0 };;
 SoftwareSerial myserial(RX, TX);
 
 
 
 void setup()
 {
-  //Serial.begin(9600);
+  Serial.begin(115200);
   myserial.begin(9600);
   pinMode(2, INPUT);
   startTime = millis();
+  rfid = RFID();
+  rfid.RFIDSetup();
+  myserial.print("Hallo begin van het einde van ons bachelor projectje");
 }
 
 
 
 void loop()
 {
+    rfid.RFIDTag();
+    naamTag=rfid.Tag();
+    myserial.print("naam van de tag is ");
+    
+    
+ 
+
+    for (uint8_t i = 0; i < 4; i++)
+    {
+      myserial.println(naamTag[i],HEX);      
+    }
+    Serial.println("het lukte");
+  
   //myserial.println("Hello World");
   //snelheid bepalen
   currentValue = digitalRead(2);

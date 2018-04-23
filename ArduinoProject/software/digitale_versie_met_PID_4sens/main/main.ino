@@ -12,7 +12,7 @@ SensorModule rightsens;
 PID steeringPID;
 RFID rfid;
 unsigned long tijdelijk=0;
-int interval=500;
+int interval=0;
 double PIDvalue;
 
 unsigned long currentMillis;
@@ -28,20 +28,21 @@ void setup() {
   Serial.begin(115200);
   steeringPID = PID(15,0,12);
   motor = Motor();
-  motor.start(00);
+  motor.start(60);
   leftsens = SensorModule(4, 5, A2, A3);
   rightsens = SensorModule(8,9,A4,A5);
-  rfid = RFID();
-  rfid.RFIDSetup();
+  //rfid = RFID();
+  //rfid.RFIDSetup();
 }
 
 void loop() {  
-  //########################### Rijden en sturen ########################
+  
  //tijdelijk=tijdelijk +1;
  currentMillis=millis();
 if (currentMillis - previousMillis >= interval){
     previousMillis=currentMillis;
-
+    //########################### Rijden en sturen ########################
+    
     leftsens.RefreshValues(leftsens);
     rightsens.RefreshValues(rightsens);
     
@@ -54,13 +55,17 @@ if (currentMillis - previousMillis >= interval){
     }else {
       PIDvalue=rightsens.calculatePIDSituatie(steeringPID);
       Serial.println("Rechts");
-
     }
     motor.rotate(PIDvalue,leftright);
+
+    //########################### RFID loop ###########################
+    
+    //rfid.RFIDTag();
+    
     tijdelijk=0;
  }
-//########################### RFID loop ###########################
-  rfid.RFIDTag();
+
+  
 }
 
 
