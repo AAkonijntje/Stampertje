@@ -9,6 +9,9 @@ unsigned long startTime, currentTime;
 const double pi = 3.1415;
 
 SoftwareSerial myserial(RX, TX);
+
+
+
 void setup()
 {
   //Serial.begin(9600);
@@ -16,6 +19,9 @@ void setup()
   pinMode(2, INPUT);
   startTime = millis();
 }
+
+
+
 void loop()
 {
   //myserial.println("Hello World");
