@@ -10,6 +10,7 @@ class SensorModule{
       SensorModule(int pin_0, int pin_1,int pin_2, int pin_3);
       double calculatePIDSituatie(PID pid);
       void printValues(PID pid);
+      void printSensorValues();
       void RefreshValues(SensorModule module);
       boolean LinksRechts(SensorModule links, SensorModule rechts);
   private:

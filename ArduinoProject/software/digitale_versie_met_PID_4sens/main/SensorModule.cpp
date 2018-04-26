@@ -56,7 +56,17 @@ void SensorModule::printValues(PID pid){
     Serial.print('\n');
 
 }
+void SensorModule::printSensorValues(){
+  Serial.print("Waardes   ");
+  Serial.print(_waarde1);
+  Serial.print("   ");
+  Serial.print(_waarde2);
+  Serial.print("   ");
+  Serial.print(_waarde3);
+  Serial.print("   ");
+  Serial.println(_waarde4);
 
+}
 boolean SensorModule::LinksRechts(SensorModule links, SensorModule rechts){
   //Left= true, Right= false
   //code voor wissel links en rechtse module
@@ -65,7 +75,7 @@ boolean SensorModule::LinksRechts(SensorModule links, SensorModule rechts){
   }
   Serial.print(change);
   Serial.print("  ");
-  if(change>3){
+  if(change>100){
     if(links._waarde1<grens){
       change=0;
       return true;      
@@ -82,13 +92,6 @@ void SensorModule::RefreshValues(SensorModule module){
   _waarde3=digitalRead(module._pin_2)*900;
   _waarde4=digitalRead(module._pin_3)*900;
 
-  Serial.print("Waardes   ");
-  Serial.print(_waarde1);
-  Serial.print("   ");
-  Serial.print(_waarde2);
-  Serial.print("   ");
-  Serial.print(_waarde3);
-  Serial.print("   ");
-  Serial.println(_waarde4);
+  printSensorValues();
 }
 
