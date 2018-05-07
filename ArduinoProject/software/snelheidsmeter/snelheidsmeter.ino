@@ -9,10 +9,8 @@ int currentValue;
 unsigned long startTime, currentTime;
 const double pi = 3.1415;
 RFID rfid;
-uint8_t naamTag[]= { 0, 0, 0, 0, 0, 0, 0 };;
+uint8_t naamTag[]= { 0, 0, 0, 0, 0, 0, 0 };
 SoftwareSerial myserial(RX, TX);
-
-
 
 void setup()
 {
@@ -25,18 +23,12 @@ void setup()
   myserial.print("Hallo begin van het einde van ons bachelor projectje");
 }
 
-
-
 void loop()
 {
     rfid.RFIDTag();
-    naamTag=rfid.Tag();
+    //naamTag=rfid.Tag();
     myserial.print("naam van de tag is ");
-    
-    
- 
-
-    for (uint8_t i = 0; i < 4; i++)
+    for (uint8_t i = 0; i < uidLength; i++)
     {
       myserial.println(naamTag[i],HEX);      
     }

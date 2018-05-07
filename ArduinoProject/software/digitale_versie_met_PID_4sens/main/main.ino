@@ -20,9 +20,6 @@ unsigned long previousMillis=0;
 boolean searchStartPos;
 boolean leftright; //Left= true, Right= false
 
-
-
-
 void setup() {
  //################################### Rijden en sturen setup ###################################
   Serial.begin(115200);

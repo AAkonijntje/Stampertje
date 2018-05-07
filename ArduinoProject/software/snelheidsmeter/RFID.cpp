@@ -54,7 +54,7 @@ void RFID::RFIDTag() {
     for (uint8_t i = 0; i < uidLength; i++)
     {
       Serial.print(" 0x"); Serial.print(uid[i], HEX);
-      _Tag[i]=uid[i];
+      //_Tag[i]=uid[i];
       Serial.println("letter toegevoegd");
       
     }
@@ -70,7 +70,7 @@ uint8_t RFID::Tag() {
 
   for (uint8_t i = 0; i < 4; i++)
     {
-     Serial.println(_Tag[i] , HEX);
+     //Serial.println(_Tag[i] , HEX);
       
     }  
   return _Tag;
